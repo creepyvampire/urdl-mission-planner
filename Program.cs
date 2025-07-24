@@ -50,7 +50,7 @@ namespace MissionPlanner
         /// <summary>
         /// MissionPlanner text image
         /// </summary>
-        public static Image Logo = null;
+        public static Image Logo = MissionPlanner.Properties.Resources.urdl_logo;
 
         /// <summary>
         /// Ardupilot logo

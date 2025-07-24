@@ -18,8 +18,8 @@ namespace MissionPlanner
 
             if (Program.Logo != null)
             {
-                pictureBox1.BackgroundImage = MissionPlanner.Properties.Resources.bgdark;
-                pictureBox1.Image = Program.Logo;
+                //pictureBox1.BackgroundImage = MissionPlanner.Properties.Resources.bgdark;
+                pictureBox1.Image = MissionPlanner.Properties.Resources.urdl_logo;
                 pictureBox1.Visible = true;
             }
 

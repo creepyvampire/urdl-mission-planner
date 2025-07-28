@@ -2951,8 +2951,8 @@ namespace MissionPlanner
                                             continue;
                                         sentmavlink1 = true;
                                     }
-
-                                    port.sendPacket(htb, MAV.sysid, MAV.compid);
+                                    //Dont send mavlink packet
+                                    //port.sendPacket(htb, MAV.sysid, MAV.compid);
                                 }
                                 catch (Exception ex)
                                 {

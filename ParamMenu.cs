@@ -88,17 +88,22 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wx_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid,(byte)compid,"wx_Kp",value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wx_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -118,17 +123,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wx_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wx_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wx_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -147,17 +158,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wx_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wx_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wx_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -176,17 +193,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting phi_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "phi_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "phi_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -205,17 +228,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting phi_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "phi_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "phi_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -234,17 +263,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting phi_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "phi_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "phi_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -263,17 +298,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wy_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wy_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wy_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -292,17 +333,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wy_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wy_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wy_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -321,17 +368,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wy_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wy_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wy_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -350,17 +403,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting the_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "the_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "the_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -379,17 +438,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting the_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "the_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "the_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -408,17 +473,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting the_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "the_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "the_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -437,17 +508,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wz_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wz_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wz_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -466,17 +543,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wz_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wz_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wz_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -495,17 +578,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting wz_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wz_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "wz_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -524,17 +613,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting shi_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "shi_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "shi_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -553,17 +648,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting shi_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "shi_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "shi_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -582,17 +683,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting shi_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "shi_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "shi_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -611,17 +718,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vz_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vz_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vz_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -640,17 +753,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vz_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vz_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vz_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -669,17 +788,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vz_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vz_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vz_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -698,17 +823,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting alt_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "alt_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "alt_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -727,17 +858,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting alt_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "alt_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "alt_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -756,17 +893,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting alt_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "alt_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "alt_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -785,17 +928,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vx_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vx_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vx_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -814,17 +963,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vx_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vx_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vx_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -843,17 +998,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vx_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vx_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vx_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -872,17 +1033,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vy_Kp to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vy_Kp", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vy_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -901,17 +1068,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vy_Ki to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vy_Ki", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vy_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -930,17 +1103,23 @@ namespace MissionPlanner
                 }
 
                 Console.WriteLine($"Setting vy_Kd to {value}");
-                try
+                for (int i = 0; i < 5; i++)
                 {
-                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vy_Kd", value);
-                    label14.Text = "Parameter Successfully Updated";
-                    await Task.Delay(5000);
-                    label14.Text = "";
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vy_Kd", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
                 }
-                catch (TimeoutException ex)
-                {
-                    MessageBox.Show("Parameter update failed: " + ex.Message);
-                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

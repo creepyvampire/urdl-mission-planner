@@ -35,6 +35,7 @@ namespace MissionPlanner
 
         private void refreshParams()
         {
+            //Gains
             textBox1.Text = MainV2.comPort.MAV.param["wx_Kp"].ToString();
             textBox2.Text = MainV2.comPort.MAV.param["wx_Ki"].ToString();
             textBox3.Text = MainV2.comPort.MAV.param["wx_Kd"].ToString();
@@ -65,6 +66,20 @@ namespace MissionPlanner
             textBox28.Text = MainV2.comPort.MAV.param["vy_Kp"].ToString();
             textBox29.Text = MainV2.comPort.MAV.param["vy_Ki"].ToString();
             textBox30.Text = MainV2.comPort.MAV.param["vy_Kd"].ToString();
+
+            //Limits
+            textBox37.Text = MainV2.comPort.MAV.param["vh_thhv"].ToString();
+            textBox38.Text = MainV2.comPort.MAV.param["vh_thmax"].ToString();
+            textBox39.Text = MainV2.comPort.MAV.param["vh_thmin"].ToString();
+            textBox40.Text = MainV2.comPort.MAV.param["vh_maxdTv"].ToString();
+            textBox41.Text = MainV2.comPort.MAV.param["vh_mindTv"].ToString();
+            textBox42.Text = MainV2.comPort.MAV.param["vh_dTwx"].ToString();
+            textBox43.Text = MainV2.comPort.MAV.param["vh_dTwy"].ToString();
+            textBox44.Text = MainV2.comPort.MAV.param["vh_dTwz"].ToString();
+            textBox45.Text = MainV2.comPort.MAV.param["vh_phistick"].ToString();
+            textBox46.Text = MainV2.comPort.MAV.param["vh_thestick"].ToString();
+            textBox47.Text = MainV2.comPort.MAV.param["vh_wzstick"].ToString();
+            textBox48.Text = MainV2.comPort.MAV.param["vh_maxalt"].ToString();
             MessageBox.Show("Params Refreshed");
         }
 

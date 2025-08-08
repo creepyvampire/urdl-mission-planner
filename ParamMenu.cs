@@ -9,15 +9,21 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace MissionPlanner
 {
     public partial class ParamMenu : Form
     {
+        private Thread attitudeThread;
         Int32 sysid = MainV2.comPort.sysidcurrent;
         Int32 compid = MainV2.comPort.compidcurrent;
+
+        bool isBiasSet=false;
+        double biasRoll, biasPitch, biasYaw;
         public ParamMenu()
         {
 
@@ -31,6 +37,43 @@ namespace MissionPlanner
             {
                 refreshParams();
             }
+            attitudeThread = new Thread(() =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        var packet = MainV2.comPort.MAV.getPacket((uint)MAVLink.MAVLINK_MSG_ID.ATTITUDE);
+                        if (packet != null)
+                        {
+                            var attitude = packet.ToStructure<MAVLink.mavlink_attitude_t>();
+
+                            // Marshal the update to the UI thread
+                            this.BeginInvoke((MethodInvoker)(() =>
+                            {
+                                textBox31.Text = attitude.roll.ToString();
+                                textBox32.Text = attitude.pitch.ToString();
+                                textBox33.Text = attitude.yaw.ToString();
+                                if (!isBiasSet)
+                                {
+                                    textBox34.Text = attitude.roll.ToString();
+                                    textBox35.Text = attitude.pitch.ToString();
+                                    textBox36.Text = attitude.yaw.ToString();
+                                }
+                            }));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Optional: Log or ignore
+                    }
+
+                    Thread.Sleep(100); // Limit UI update rate to ~10 Hz
+                }
+            });
+
+            attitudeThread.IsBackground = true;
+            attitudeThread.Start();
         }
 
         private void refreshParams()
@@ -1134,8 +1177,445 @@ namespace MissionPlanner
                     }
                 }
                 MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
+        }
+
+        private async void textBox37_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox37.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_thhv to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_thhv", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox38_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox38.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_thmax to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_thmax", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox39_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox39.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_thmin to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_thmin", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox40_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox40.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_maxdTv to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_maxdTv", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox41_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox41.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_mindTv to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_mindTv", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox42_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox42.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_dTwxto {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_dTwx", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox43_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox43.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_dTwy to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_dTwy", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox44_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox44.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_dTwz to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_dTwz", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox45_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox45.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_phistick to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_phistick", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox46_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox46.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_thestick to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_thestick", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox47_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox47.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_wzstick to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_wzstick", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void textBox48_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = textBox48.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting vh_maxalt to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "vh_maxalt", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void ParamMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            attitudeThread.Abort();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            isBiasSet = true;
+
+            string roll = textBox34.Text.Trim();
+            string pitch = textBox35.Text.Trim();
+            string yaw = textBox36.Text.Trim();
+            double.TryParse(roll, NumberStyles.Float, CultureInfo.InvariantCulture, out biasRoll);
+            double.TryParse(pitch,NumberStyles.Float, CultureInfo.InvariantCulture,out biasPitch);
+            double.TryParse(yaw, NumberStyles.Float, CultureInfo.InvariantCulture, out biasYaw);
+
+            MessageBox.Show($"Bias set to {roll} {pitch} {yaw}", "Bias Set",MessageBoxButtons.OK);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            isBiasSet = false;
+            biasRoll = 0;
+            biasPitch = 0;
+            biasYaw = 0;
+
+            MessageBox.Show("Biases reset", "Info", MessageBoxButtons.OK);
         }
     }
 }

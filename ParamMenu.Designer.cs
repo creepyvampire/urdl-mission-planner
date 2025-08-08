@@ -75,6 +75,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -359,7 +361,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(217, 260);
+            this.button1.Location = new System.Drawing.Point(254, 260);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 23);
             this.button1.TabIndex = 36;
@@ -489,7 +491,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(274, 294);
+            this.label14.Location = new System.Drawing.Point(241, 294);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(0, 13);
             this.label14.TabIndex = 51;
@@ -560,6 +562,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label17);
@@ -577,6 +581,26 @@
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "AHRS Bias";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(184, 105);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Reset";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(67, 105);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Set";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label19
             // 
@@ -706,7 +730,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(210, 162);
+            this.label26.Location = new System.Drawing.Point(208, 162);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(65, 13);
             this.label26.TabIndex = 53;
@@ -716,7 +740,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(228, 135);
+            this.label27.Location = new System.Drawing.Point(226, 135);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(47, 13);
             this.label27.TabIndex = 52;
@@ -726,7 +750,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(227, 109);
+            this.label28.Location = new System.Drawing.Point(225, 109);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(49, 13);
             this.label28.TabIndex = 51;
@@ -736,7 +760,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(227, 83);
+            this.label29.Location = new System.Drawing.Point(225, 83);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(48, 13);
             this.label29.TabIndex = 50;
@@ -746,7 +770,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(227, 58);
+            this.label30.Location = new System.Drawing.Point(225, 58);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(48, 13);
             this.label30.TabIndex = 49;
@@ -756,7 +780,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(227, 32);
+            this.label31.Location = new System.Drawing.Point(225, 32);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(48, 13);
             this.label31.TabIndex = 48;
@@ -766,7 +790,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(48, 162);
+            this.label25.Location = new System.Drawing.Point(46, 162);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(48, 13);
             this.label25.TabIndex = 47;
@@ -776,7 +800,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 136);
+            this.label24.Location = new System.Drawing.Point(4, 136);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(90, 13);
             this.label24.TabIndex = 46;
@@ -786,7 +810,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(3, 109);
+            this.label23.Location = new System.Drawing.Point(1, 109);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(93, 13);
             this.label23.TabIndex = 45;
@@ -796,7 +820,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(32, 84);
+            this.label22.Location = new System.Drawing.Point(30, 84);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(63, 13);
             this.label22.TabIndex = 44;
@@ -806,7 +830,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(29, 58);
+            this.label21.Location = new System.Drawing.Point(27, 58);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(66, 13);
             this.label21.TabIndex = 43;
@@ -816,7 +840,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 32);
+            this.label20.Location = new System.Drawing.Point(18, 32);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(75, 13);
             this.label20.TabIndex = 42;
@@ -829,6 +853,7 @@
             this.textBox48.Name = "textBox48";
             this.textBox48.Size = new System.Drawing.Size(78, 20);
             this.textBox48.TabIndex = 41;
+            this.textBox48.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox48_KeyDown);
             // 
             // textBox47
             // 
@@ -836,6 +861,7 @@
             this.textBox47.Name = "textBox47";
             this.textBox47.Size = new System.Drawing.Size(78, 20);
             this.textBox47.TabIndex = 40;
+            this.textBox47.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox47_KeyDown);
             // 
             // textBox46
             // 
@@ -843,6 +869,7 @@
             this.textBox46.Name = "textBox46";
             this.textBox46.Size = new System.Drawing.Size(78, 20);
             this.textBox46.TabIndex = 39;
+            this.textBox46.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox46_KeyDown);
             // 
             // textBox45
             // 
@@ -850,6 +877,7 @@
             this.textBox45.Name = "textBox45";
             this.textBox45.Size = new System.Drawing.Size(78, 20);
             this.textBox45.TabIndex = 38;
+            this.textBox45.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox45_KeyDown);
             // 
             // textBox44
             // 
@@ -857,6 +885,7 @@
             this.textBox44.Name = "textBox44";
             this.textBox44.Size = new System.Drawing.Size(78, 20);
             this.textBox44.TabIndex = 37;
+            this.textBox44.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox44_KeyDown);
             // 
             // textBox43
             // 
@@ -864,6 +893,7 @@
             this.textBox43.Name = "textBox43";
             this.textBox43.Size = new System.Drawing.Size(78, 20);
             this.textBox43.TabIndex = 36;
+            this.textBox43.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox43_KeyDown);
             // 
             // textBox42
             // 
@@ -871,6 +901,7 @@
             this.textBox42.Name = "textBox42";
             this.textBox42.Size = new System.Drawing.Size(78, 20);
             this.textBox42.TabIndex = 35;
+            this.textBox42.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox42_KeyDown);
             // 
             // textBox41
             // 
@@ -878,6 +909,7 @@
             this.textBox41.Name = "textBox41";
             this.textBox41.Size = new System.Drawing.Size(78, 20);
             this.textBox41.TabIndex = 34;
+            this.textBox41.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox41_KeyDown);
             // 
             // textBox40
             // 
@@ -885,6 +917,7 @@
             this.textBox40.Name = "textBox40";
             this.textBox40.Size = new System.Drawing.Size(78, 20);
             this.textBox40.TabIndex = 33;
+            this.textBox40.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox40_KeyDown);
             // 
             // textBox39
             // 
@@ -892,6 +925,7 @@
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(78, 20);
             this.textBox39.TabIndex = 32;
+            this.textBox39.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox39_KeyDown);
             // 
             // textBox38
             // 
@@ -899,6 +933,7 @@
             this.textBox38.Name = "textBox38";
             this.textBox38.Size = new System.Drawing.Size(78, 20);
             this.textBox38.TabIndex = 31;
+            this.textBox38.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox38_KeyDown);
             // 
             // textBox37
             // 
@@ -906,17 +941,19 @@
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(78, 20);
             this.textBox37.TabIndex = 30;
+            this.textBox37.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox37_KeyDown);
             // 
             // ParamMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 622);
+            this.ClientSize = new System.Drawing.Size(997, 382);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ParamMenu";
             this.Text = "Parameter Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ParamMenu_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1012,5 +1049,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }

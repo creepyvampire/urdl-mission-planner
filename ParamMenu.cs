@@ -51,20 +51,21 @@ namespace MissionPlanner
                             // Marshal the update to the UI thread
                             this.BeginInvoke((MethodInvoker)(() =>
                             {
-                                textBox31.Text = attitude.roll.ToString();
-                                textBox32.Text = attitude.pitch.ToString();
-                                textBox33.Text = attitude.yaw.ToString();
+                                textBox31.Text = (attitude.roll*57.3).ToString("F4");
+                                textBox32.Text = (attitude.pitch*57.3).ToString("F4");
+                                textBox33.Text = (attitude.yaw * 57.3).ToString("F4");
                                 if (!isBiasSet)
                                 {
-                                    textBox34.Text = attitude.roll.ToString();
-                                    textBox35.Text = attitude.pitch.ToString();
-                                    textBox36.Text = attitude.yaw.ToString();
+                                    textBox34.Text = (attitude.roll * 57.3).ToString("F4");
+                                    textBox35.Text = (attitude.pitch * 57.3).ToString("F4");
+                                    textBox36.Text = (attitude.yaw * 57.3).ToString("F4");
                                 }
                             }));
                         }
                     }
                     catch (Exception ex)
                     {
+                        
                         // Optional: Log or ignore
                     }
 

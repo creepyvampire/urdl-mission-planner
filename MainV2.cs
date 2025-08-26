@@ -49,13 +49,84 @@ using DroneCAN;
 
 namespace MissionPlanner
 {
+    public struct TelemetryLog
+    {
+        //Attitude
+        public float roll;
+        public float pitch;
+        public float yaw;
+        public float rollSpeed;
+        public float pitchSpeed;
+        public float yawSpeed;
+
+        //Global_Position_Int
+        public Int32 lat;
+        public Int32 lon;
+        public Int32 alt;
+        public Int32 relativeAlt;
+        public UInt16 hdg;
+        public Int16 vx;
+        public Int16 vy;
+        public Int16 vz;
+
+        //Heartbeat
+        public byte baseMode;
+        public UInt32 customMode;
+        public byte systemStatus;
+        public byte type;
+
+        //Home Position
+        public Int32 homeLat;
+        public Int32 homeLong;
+        public Int32 homeAlt;
+        public float approachX;
+        public float approachY;
+        public float approachZ;
+        public float q1;
+        public float q2;
+        public float q3;
+        public float q4;
+        public float homeX;
+        public float homeY;
+        public float homeZ;
+
+        //RC_Channels_Raw
+        public UInt16 chan1_raw;
+        public UInt16 chan2_raw;
+        public UInt16 chan3_raw;
+        public UInt16 chan4_raw;
+        public UInt16 chan5_raw;
+        public UInt16 chan6_raw;
+        public UInt16 chan7_raw;
+        public UInt16 chan8_raw;
+        public byte port;
+        public byte rssi;
+
+        //Scaled IMU
+        public Int16 xacc;
+        public Int16 yacc;
+        public Int16 zacc;
+        public Int16 xgyro;
+        public Int16 ygyro;
+        public Int16 zgyro;
+        public Int16 xmag;
+        public Int16 ymag;
+        public Int16 zmag;
+        public Int16 temp;
+    }
+
+    
     public partial class MainV2 : Form
     {
+        public static TelemetryLog Current = new TelemetryLog();
+
         private static readonly ILog log =
             LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public static menuicons displayicons; //do not initialize to allow update of custom icons
         public static string running_directory = Settings.GetRunningDirectory();
+
+
 
         public abstract class menuicons
         {
@@ -532,6 +603,9 @@ namespace MissionPlanner
 
         bool adsbThread = false;
 
+
+
+
         Thread httpthread;
         Thread pluginthread;
 
@@ -652,6 +726,7 @@ namespace MissionPlanner
                 }
             }
 
+            
             // load config
             LoadConfig();
 
@@ -2575,8 +2650,11 @@ namespace MissionPlanner
         ///
         /// and can't fall out
         /// </summary>
+        /// 
+        
         private async void SerialReader()
         {
+
             if (serialThread == true)
                 return;
             serialThread = true;
@@ -3033,6 +3111,104 @@ namespace MissionPlanner
                             try
                             {
                                 await port.readPacketAsync().ConfigureAwait(false);
+
+                                MAVLink.MAVLinkMessage pkt = port.readPacket();
+                                
+                                if (pkt != null)
+                                {
+                                    switch (pkt.msgid)
+                                    {
+                                        case ((uint)MAVLink.MAVLINK_MSG_ID.GLOBAL_POSITION_INT):
+                                            {
+                                                var decodedPkt = pkt.ToStructure<mavlink_global_position_int_t>();
+                                                Current.lat = decodedPkt.lat;
+                                                Current.lon = decodedPkt.lon;
+                                                Current.alt = decodedPkt.alt;
+                                                Current.hdg = decodedPkt.hdg;
+                                                Current.relativeAlt = decodedPkt.relative_alt;
+                                                Current.vx = decodedPkt.vx;
+                                                Current.vy = decodedPkt.vy;
+                                                Current.vz = decodedPkt.vz;
+                                                break;
+                                            }
+                                        case ((uint)MAVLink.MAVLINK_MSG_ID.ATTITUDE):
+                                            {
+                                                var decodedPkt = pkt.ToStructure<mavlink_attitude_t>();
+                                                Current.pitch = decodedPkt.pitch;
+                                                Current.pitchSpeed = decodedPkt.pitchspeed;
+                                                Current.roll = decodedPkt.roll;
+                                                Current.rollSpeed = decodedPkt.rollspeed;
+                                                Current.yaw = decodedPkt.yaw;
+                                                Current.yawSpeed = decodedPkt.yawspeed;
+                                                break;
+                                            }
+                                        case ((uint)MAVLink.MAVLINK_MSG_ID.HEARTBEAT):
+                                            {
+                                                var decodedPkt = pkt.ToStructure<mavlink_heartbeat_t>();
+                                                Current.baseMode = decodedPkt.base_mode;
+                                                Current.customMode = decodedPkt.custom_mode;
+                                                Current.systemStatus = decodedPkt.system_status;
+                                                Current.type = decodedPkt.type;
+                                                break;
+                                            }
+                                        case ((uint)MAVLink.MAVLINK_MSG_ID.HOME_POSITION):
+                                            {
+                                                var decodedPkt = pkt.ToStructure<mavlink_home_position_t>();
+                                                Current.homeLat = decodedPkt.latitude;
+                                                Current.homeLong = decodedPkt.longitude;
+                                                Current.homeAlt = decodedPkt.altitude;
+                                                Current.approachX = decodedPkt.approach_x;
+                                                Current.approachY = decodedPkt.approach_y;
+                                                Current.approachZ = decodedPkt.approach_z;
+                                                Current.q1 = decodedPkt.q[0];
+                                                Current.q2 = decodedPkt.q[1];
+                                                Current.q3 = decodedPkt.q[2];
+                                                Current.q4 = decodedPkt.q[3];
+                                                Current.homeX = decodedPkt.x;
+                                                Current.homeY = decodedPkt.y;
+                                                Current.homeZ = decodedPkt.z;
+                                                break;
+                                            }
+                                        case ((uint)MAVLink.MAVLINK_MSG_ID.RC_CHANNELS_RAW):
+                                            {
+                                                var decodedPkt = pkt.ToStructure<mavlink_rc_channels_raw_t>();
+                                                Current.chan1_raw = decodedPkt.chan1_raw;
+                                                Current.chan2_raw = decodedPkt.chan2_raw;
+                                                Current.chan3_raw = decodedPkt.chan3_raw;
+                                                Current.chan4_raw = decodedPkt.chan4_raw;
+                                                Current.chan5_raw = decodedPkt.chan5_raw;
+                                                Current.chan6_raw = decodedPkt.chan6_raw;
+                                                Current.chan7_raw = decodedPkt.chan7_raw;
+                                                Current.chan8_raw = decodedPkt.chan8_raw;
+                                                Current.port = decodedPkt.port;
+                                                Current.rssi = decodedPkt.rssi;
+                                                break;
+                                            }
+                                        case ((uint)MAVLink.MAVLINK_MSG_ID.SCALED_IMU):
+                                            {
+                                                var decodedPkt = pkt.ToStructure<mavlink_scaled_imu_t>();
+                                                Current.xacc = decodedPkt.xacc;
+                                                Current.yacc = decodedPkt.yacc;
+                                                Current.zacc = decodedPkt.zacc;
+                                                Current.xgyro = decodedPkt.xgyro;
+                                                Current.ygyro = decodedPkt.ygyro;
+                                                Current.zgyro = decodedPkt.zgyro;
+                                                Current.xmag = decodedPkt.xmag;
+                                                Current.ymag = decodedPkt.ymag;
+                                                Current.zmag = decodedPkt.zmag;
+                                                Current.temp = decodedPkt.temperature;
+                                                break;
+                                            }
+                                    }
+                                    //if (pkt.msgid == (uint)MAVLink.MAVLINK_MSG_ID.GLOBAL_POSITION_INT)
+                                    //{
+                                    //    var decodedPkt = pkt.ToStructure<mavlink_global_position_int_t>();
+
+                                    //    Current.lat = decodedPkt.lat;
+                                    //    Current.lon = decodedPkt.lon;
+                                    //    Current.alt = decodedPkt.alt;
+                                    //}
+                                }
                             }
                             catch (Exception ex)
                             {
@@ -3073,7 +3249,44 @@ namespace MissionPlanner
             SerialThreadrunner.Set();
         }
 
+
+        private void LoggerThread()
+        {
+            //Log init
+            DateTime now = DateTime.Now;
+            string currentDateTime = now.ToString("yyyy_MM_dd_HH_mm_ss");
+
+            var basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "URDL_Flight_Logs");
+            Directory.CreateDirectory(basePath);
+            var filePath = Path.Combine(basePath, $"log_{currentDateTime}.csv");
+            var csvWriter = new StreamWriter(filePath, append: true);
+            csvWriter.AutoFlush = true;
+            csvWriter.WriteLine("log_time,pitch,pitch_speed,roll,roll_speed,yaw,yaw_speed,lat,long,alt,relative_alt,hdg,vx,vy,vz,base_mode,custom_mode,system_status,type,home_lat,home_long,home_alt,app_x,app_y,app_z,q1,q2,q3,q4,home_x,home_y,home_z,chan1,chan2,chan3,chan4,chan5,chan6,chan7,chan8,,port,rssi,xacc,yacc,zacc,xgyro,ygyro,zgyro,xmag,ymag,zmag,temp");
+
+            while (serialThread)
+            {
+                if (comPort.BaseStream.IsOpen)
+                {
+                    string log_time = DateTime.Now.ToString("HH:mm:ss");
+                    try
+                    {
+                        csvWriter.WriteLine($"{log_time},{Current.pitch},{Current.pitchSpeed},{Current.roll},{Current.rollSpeed},{Current.yaw},{Current.yawSpeed},{Current.lat},{Current.lon},{Current.alt},{Current.relativeAlt},{Current.hdg},{Current.vx},{Current.vy},{Current.vz},{Current.baseMode},{Current.customMode},{Current.systemStatus}," +
+                            $"{Current.type},{Current.homeLat},{Current.homeLong},{Current.homeAlt},{Current.approachX},{Current.approachY},{Current.approachZ},{Current.q1},{Current.q2},{Current.q3},{Current.q4},{Current.homeX},{Current.homeY},{Current.homeZ},{Current.chan1_raw},{Current.chan2_raw},{Current.chan3_raw},{Current.chan4_raw},{Current.chan5_raw},{Current.chan6_raw},{Current.chan7_raw},{Current.chan8_raw},{Current.port},{Current.rssi}," +
+                            $"{Current.xacc},{Current.yacc},{Current.zacc},{Current.xgyro},{Current.ygyro},{Current.zgyro},{Current.xmag},{Current.ymag},{Current.zmag},{Current.temp}");
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.ToString());
+                    }
+                }
+                Thread.Sleep(500);
+            }
+        }
+
         ManualResetEvent ADSBThreadRunner = new ManualResetEvent(false);
+
+        
 
         /// <summary>
         /// adsb periodic send thread
@@ -3243,6 +3456,12 @@ namespace MissionPlanner
             {
                 log.Error(ex);
             }
+
+
+            log.Info("start Logger and initialize csv writer");
+
+            Thread t = new Thread(LoggerThread);
+            t.Start();
 
             log.Info("start adsbsender");
             try
@@ -4802,6 +5021,12 @@ namespace MissionPlanner
         {
             Console.WriteLine("Button Clicked");
             ParamMenu newWindow = new ParamMenu();
+            newWindow.Show();
+        }
+
+        private void MenuButtons_Click(object sender, EventArgs e)
+        {
+            ButtonMenu newWindow = new ButtonMenu();
             newWindow.Show();
         }
     }

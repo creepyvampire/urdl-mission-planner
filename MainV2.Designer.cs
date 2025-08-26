@@ -50,6 +50,7 @@ namespace MissionPlanner
             this.MenuSimulation = new System.Windows.Forms.ToolStripButton();
             this.MenuHelp = new System.Windows.Forms.ToolStripButton();
             this.MenuParams = new System.Windows.Forms.ToolStripButton();
+            this.MenuButtons = new System.Windows.Forms.ToolStripButton();
             this.MenuConnect = new System.Windows.Forms.ToolStripButton();
             this.toolStripConnectionControl = new MissionPlanner.Controls.ToolStripConnectionControl();
             this.menu = new MissionPlanner.Controls.MyButton();
@@ -74,6 +75,7 @@ namespace MissionPlanner
             this.MenuSimulation,
             this.MenuHelp,
             this.MenuParams,
+            this.MenuButtons,
             this.MenuConnect,
             this.toolStripConnectionControl});
             this.MainMenu.Name = "MainMenu";
@@ -181,6 +183,14 @@ namespace MissionPlanner
             this.MenuParams.Name = "MenuParams";
             this.MenuParams.Click += new System.EventHandler(this.MenuParams_Click);
             // 
+            // MenuButtons
+            // 
+            resources.ApplyResources(this.MenuButtons, "MenuButtons");
+            this.MenuButtons.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MenuButtons.Image = global::MissionPlanner.Properties.Resources.light_terminal_icon;
+            this.MenuButtons.Name = "MenuButtons";
+            this.MenuButtons.Click += new System.EventHandler(this.MenuButtons_Click);
+            // 
             // MenuConnect
             // 
             this.MenuConnect.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -249,6 +259,7 @@ namespace MissionPlanner
         public System.Windows.Forms.ToolStripButton MenuConfigTune;
         public System.Windows.Forms.ToolStripButton MenuConnect;
         public System.Windows.Forms.ToolStripButton MenuParams;
+        public System.Windows.Forms.ToolStripButton MenuButtons;
         private Controls.ToolStripConnectionControl toolStripConnectionControl;
         private Controls.MyButton menu;
         public System.Windows.Forms.Panel panel1;

@@ -3199,6 +3199,8 @@ namespace MissionPlanner
                                                 Current.temp = decodedPkt.temperature;
                                                 break;
                                             }
+                                        default:
+                                            break;
                                     }
                                     //if (pkt.msgid == (uint)MAVLink.MAVLINK_MSG_ID.GLOBAL_POSITION_INT)
                                     //{

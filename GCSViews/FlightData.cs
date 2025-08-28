@@ -6657,7 +6657,7 @@ namespace MissionPlanner.GCSViews
             if (!_isArmed)
             {
                 _isArmed = true;
-                MainV2.comPort.doARM(true, false);
+                MainV2.comPort.doARMAsync(MainV2.comPort.MAV.sysid,MainV2.comPort.MAV.compid,true, false);
                 button2.Text = "DISARM";
                 button2.BackColor = Color.Red;
                 button2.ForeColor = Color.White;
@@ -6666,7 +6666,7 @@ namespace MissionPlanner.GCSViews
             else
             {
                 _isArmed = false;
-                MainV2.comPort.doARM(false, false);
+                MainV2.comPort.doARMAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, false, false);
                 button2.Text = "ARM";
                 button2.BackColor = Color.Green;
                 button2.ForeColor = Color.Black;

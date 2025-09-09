@@ -420,6 +420,7 @@ namespace MissionPlanner.GCSViews
 
             tabControlactions.Multiline = Settings.Instance.GetBoolean("tabControlactions_Multiline", false);
 
+
         }
 
         public void Activate()
@@ -769,6 +770,7 @@ namespace MissionPlanner.GCSViews
             }
 
             ThemeManager.ApplyThemeTo(tabControlactions);
+
         }
 
         internal void BUT_run_script_Click(object sender, EventArgs e)
@@ -6652,54 +6654,70 @@ namespace MissionPlanner.GCSViews
             // Pass `this` to keep the pop-out always on top
             form.Show(this);
         }
-        private void button2_Click(object sender, EventArgs e)
+
+        bool _isFailsafeEnabled = false;
+        bool _isArmed = false;
+        private async void button2_Click(object sender, EventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (!_isArmed)
             {
                 _isArmed = true;
-                MainV2.comPort.doARMAsync(MainV2.comPort.MAV.sysid,MainV2.comPort.MAV.compid,true, false);
-                button2.Text = "DISARM";
+                await MainV2.comPort.doARMAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, true, false);
+                button2.Text = "IDLE";
                 button2.BackColor = Color.Red;
                 button2.ForeColor = Color.White;
-                MessageBox.Show("Vehicle ARMED", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
                 _isArmed = false;
-                MainV2.comPort.doARMAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, false, false);
+                await MainV2.comPort.doARMAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, false, false);
                 button2.Text = "ARM";
                 button2.BackColor = Color.Green;
                 button2.ForeColor = Color.Black;
                 MessageBox.Show("Vehicle DISARMED", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
 
             //MainV2.comPort.doARM(true, false);
 
         }
 
-        bool _isFailsafeEnabled = false;
-        bool _isArmed = false;
-        private void button1_Click(object sender, EventArgs e)
+        private async void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Vehicle set to IDLE", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            double takeoffAlt;
-            double.TryParse(textBox1.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out takeoffAlt);
+            float takeoffAlt;
+            float.TryParse(textBox1.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out takeoffAlt);
             MessageBox.Show($"Takeoff to altitide: {takeoffAlt}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            await MainV2.comPort.doCommandAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.TAKEOFF, 0, 0, 0, 0, 0, 0, takeoffAlt);
+
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Landing Mode Initiated", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            await MainV2.comPort.doCommandAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.LAND, 0, (float)MAVLink.PRECISION_LAND_MODE.DISABLED, 0, 0, 0, 0, 0);
+
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private async void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Return to home initiated", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            await MainV2.comPort.doCommandAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.RETURN_TO_LAUNCH, 0, 0, 0, 0, 0, 0, 0);
 
         }
 
@@ -6711,7 +6729,6 @@ namespace MissionPlanner.GCSViews
                 button5.Text = "Disable Failsafe";
                 button5.BackColor = Color.Red;
                 button5.ForeColor = Color.White;
-                MessageBox.Show("Failsafe Enabled", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -6719,9 +6736,38 @@ namespace MissionPlanner.GCSViews
                 button5.Text = "Enable Failsafe";
                 button5.BackColor = Color.Green;
                 button5.ForeColor = Color.Black;
-                MessageBox.Show("Failsafe Disbaled", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+        }
+
+        private async void button7_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            await MainV2.comPort.doCommandAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.MISSION_START, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+        private async void button8_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            float velocity = (float)numericUpDown1.Value;
+            await MainV2.comPort.doCommandAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.DO_CHANGE_SPEED, (float)MAVLink.SPEED_TYPE.AIRSPEED, velocity, -1, 0, 0, 0, 0);
+
+        }
+
+        private async void button9_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            float altitude = (float)numericUpDown2.Value;
+            await MainV2.comPort.doCommandAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.DO_CHANGE_ALTITUDE, altitude, (float)MAVLink.MAV_FRAME.GLOBAL, 0, 0, 0,0,0);
         }
     }
 }

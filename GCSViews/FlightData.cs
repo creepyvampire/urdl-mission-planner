@@ -6769,6 +6769,7 @@ namespace MissionPlanner.GCSViews
             float altitude = (float)numericUpDown2.Value;
             await MainV2.comPort.doCommandAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.DO_CHANGE_ALTITUDE, altitude, (float)MAVLink.MAV_FRAME.GLOBAL, 0, 0, 0,0,0);
 
+
         }
     }
 }

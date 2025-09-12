@@ -6801,5 +6801,10 @@ namespace MissionPlanner.GCSViews
 
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MainV2.comPort.setMode("GUIDED");
+        }
     }
 }

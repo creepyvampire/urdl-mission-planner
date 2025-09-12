@@ -249,6 +249,8 @@ namespace MissionPlanner.GCSViews
             this.scriptChecker = new System.Windows.Forms.Timer(this.components);
             this.Messagetabtimer = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceStatusTab = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainH)).BeginInit();
             this.MainH.Panel1.SuspendLayout();
             this.MainH.Panel2.SuspendLayout();
@@ -624,6 +626,8 @@ namespace MissionPlanner.GCSViews
             // tabQuick
             // 
             resources.ApplyResources(this.tabQuick, "tabQuick");
+            this.tabQuick.Controls.Add(this.button10);
+            this.tabQuick.Controls.Add(this.button1);
             this.tabQuick.Controls.Add(this.numericUpDown2);
             this.tabQuick.Controls.Add(this.numericUpDown1);
             this.tabQuick.Controls.Add(this.button9);
@@ -2949,6 +2953,19 @@ namespace MissionPlanner.GCSViews
             // 
             this.bindingSourceStatusTab.DataSource = typeof(MissionPlanner.CurrentState);
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            resources.ApplyResources(this.button10, "button10");
+            this.button10.Name = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // FlightData
             // 
             this.Controls.Add(this.MainH);
@@ -3274,5 +3291,7 @@ namespace MissionPlanner.GCSViews
         private Label label10;
         private NumericUpDown numericUpDown2;
         private NumericUpDown numericUpDown1;
+        private Button button10;
+        private Button button1;
     }
 }

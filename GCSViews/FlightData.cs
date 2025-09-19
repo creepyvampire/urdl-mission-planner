@@ -52,6 +52,7 @@ namespace MissionPlanner.GCSViews
         internal static GMapOverlay cameraBounds;
         internal static GMapOverlay rallypointoverlay;
         internal static GMapOverlay tfrpolygons;
+        internal static GMapOverlay gotoLine;
         internal GMapMarker CurrentGMapMarker;
 
         internal PointLatLng MouseDownStart;
@@ -387,6 +388,7 @@ namespace MissionPlanner.GCSViews
             photosoverlay = new GMapOverlay("photos overlay");
             gMapControl1.Overlays.Add(photosoverlay);
 
+            
             cameraBounds = new GMapOverlay("camera bounds");
             gMapControl1.Overlays.Add(cameraBounds);
 
@@ -400,6 +402,9 @@ namespace MissionPlanner.GCSViews
             gMapControl1.Overlays.Add(rallypointoverlay);
 
             gMapControl1.Overlays.Add(poioverlay);
+
+            gotoLine = new GMapOverlay("gotoLine");
+            gMapControl1.Overlays.Add(gotoLine);
 
             float gspeedMax = Settings.Instance.GetFloat("GspeedMAX");
             if (gspeedMax != 0)
@@ -3340,8 +3345,26 @@ namespace MissionPlanner.GCSViews
                 Thread.Sleep(1000);
             }
 
+            bool _isDrawn = false;
+
             while (threadrun)
             {
+                gotoLine.Routes.Clear();
+                if (MainV2.comPort.BaseStream.IsOpen && MainV2.comPort.MAV.GuidedMode.x!=0)
+                {
+                    // Get the drone's current position
+                    PointLatLng currentDroneloc = new PointLatLng(MainV2.comPort.MAV.cs.lat, MainV2.comPort.MAV.cs.lng);
+                    //Console.WriteLine($"1: {MainV2.comPort.MAV.cs.lat}\n2: {((double)MainV2.comPort.MAV.GuidedMode.x)/1e7}");
+                    PointLatLng targetloc = new PointLatLng(((double) MainV2.comPort.MAV.GuidedMode.x)/1e7, ((double)MainV2.comPort.MAV.GuidedMode.y)/1e7);
+
+                    // Create the line (GMapRoute) with the two points
+                    GMapRoute wpdirection = new GMapRoute(new PointLatLng[] { currentDroneloc, targetloc }, "wpdirection");
+                    wpdirection.Stroke = new Pen(Color.Aqua , 4); // Orange line, 2 pixels wide
+
+                    // Add the new line to the overlay
+                    gotoLine.Routes.Add(wpdirection);
+                }
+                
                 if (MainV2.comPort.giveComport)
                 {
                     //await Task.Delay(50);
@@ -6699,7 +6722,7 @@ namespace MissionPlanner.GCSViews
             {
                 _isArmed = true;
                 //await MainV2.comPort.doARMAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, true, false);
-                MainV2.comPort.doARM(true);
+                MainV2.comPort.doARM(true,true);
                 button2.Text = "IDLE";
                 button2.BackColor = Color.LawnGreen;
                 button2.ForeColor = Color.Black;
@@ -6709,7 +6732,7 @@ namespace MissionPlanner.GCSViews
             {
                 _isArmed = false;
                 //await MainV2.comPort.doARMAsync(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, false, false);
-                MainV2.comPort.doARM(false);
+                MainV2.comPort.doARM(false,true);
                 button2.Text = "ARM";
                 button2.BackColor = Color.Red;
                 button2.ForeColor = Color.White;
@@ -6751,25 +6774,6 @@ namespace MissionPlanner.GCSViews
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (!_isFailsafeEnabled)
-            {
-                _isFailsafeEnabled = true;
-                button5.Text = "Disable Failsafe";
-                button5.BackColor = Color.Red;
-                button5.ForeColor = Color.White;
-            }
-            else
-            {
-                _isFailsafeEnabled = false;
-                button5.Text = "Enable Failsafe";
-                button5.BackColor = Color.Green;
-                button5.ForeColor = Color.Black;
-
-            }
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             if (!MainV2.comPort.BaseStream.IsOpen)
@@ -6804,7 +6808,31 @@ namespace MissionPlanner.GCSViews
 
         private void button10_Click(object sender, EventArgs e)
         {
-            MainV2.comPort.setMode("GUIDED");
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(
+                MAVLink.MAV_CMD.DO_SET_MODE,
+                (float)(MAVLink.MAV_MODE_FLAG.CUSTOM_MODE_ENABLED | MAVLink.MAV_MODE_FLAG.GUIDED_ENABLED),
+                (float)4, // Guided = 4 in ArduCopter
+                0, 0, 0, 0, 0
+            );
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            float p1 = checkBox1.Checked ? 1 : 0;
+            float p2 = checkBox2.Checked ? 1 : 0;
+            float p3 = checkBox3.Checked ? 1 : 0;
+            float p4 = checkBox4.Checked ? 1 : 0;
+            float p5 = checkBox5.Checked ? 1 : 0;
+            Console.WriteLine($"FAILSAFE CHECKSTATE: {p1} {p2} {p3} {p4} {p5}");
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, p1, p2, p3, p4, p5, 0, 0);
         }
     }
 }

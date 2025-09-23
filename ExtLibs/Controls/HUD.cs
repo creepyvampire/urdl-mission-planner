@@ -113,7 +113,7 @@ namespace MissionPlanner.Controls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.hudcolor = System.Drawing.Color.LightGray;
             this.Name = "graphicsObject";
-            this.Size = new System.Drawing.Size(630, 439);
+            this.Size = new System.Drawing.Size(589, 384);
             this.VSync = false;
             this.ResumeLayout(false);
 

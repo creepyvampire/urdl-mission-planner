@@ -3415,11 +3415,11 @@ Mission Planner waits for 2 valid heartbeat packets before connecting
             while (giveComport == true)
                 Thread.Sleep(10);
 
-            bool use_int = (MAVlist[sysid, compid].cs.capabilities & (uint) MAV_PROTOCOL_CAPABILITY.MISSION_INT) > 0;
+            bool use_int = true;
 
             object req;
 
-            if (use_int)
+            if (true)
             {
                 mavlink_mission_request_int_t reqi = new mavlink_mission_request_int_t
                 {

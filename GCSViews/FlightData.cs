@@ -3352,16 +3352,12 @@ namespace MissionPlanner.GCSViews
                 gotoLine.Routes.Clear();
                 if (MainV2.comPort.BaseStream.IsOpen && MainV2.comPort.MAV.GuidedMode.x!=0)
                 {
-                    // Get the drone's current position
                     PointLatLng currentDroneloc = new PointLatLng(MainV2.comPort.MAV.cs.lat, MainV2.comPort.MAV.cs.lng);
-                    //Console.WriteLine($"1: {MainV2.comPort.MAV.cs.lat}\n2: {((double)MainV2.comPort.MAV.GuidedMode.x)/1e7}");
+                    Console.WriteLine($"1: {MainV2.comPort.MAV.cs.lat}\n2: {((double)MainV2.comPort.MAV.GuidedMode.x)/1e7}");
+                    //Console.WriteLine($"Target:");
                     PointLatLng targetloc = new PointLatLng(((double) MainV2.comPort.MAV.GuidedMode.x)/1e7, ((double)MainV2.comPort.MAV.GuidedMode.y)/1e7);
-
-                    // Create the line (GMapRoute) with the two points
                     GMapRoute wpdirection = new GMapRoute(new PointLatLng[] { currentDroneloc, targetloc }, "wpdirection");
-                    wpdirection.Stroke = new Pen(Color.Aqua , 4); // Orange line, 2 pixels wide
-
-                    // Add the new line to the overlay
+                    wpdirection.Stroke = new Pen(Color.Aqua , 4); // Orange line, 2 pixels 
                     gotoLine.Routes.Add(wpdirection);
                 }
                 

@@ -701,6 +701,8 @@ namespace MissionPlanner.GCSViews
 
             TabListDisplay.Add(tabQuick.Name, MainV2.DisplayConfiguration.displayQuickTab);
 
+            TabListDisplay.Add(tabHUD.Name, MainV2.DisplayConfiguration.displayHUDTab);
+
             TabListDisplay.Add(tabPagePreFlight.Name, MainV2.DisplayConfiguration.displayPreFlightTab);
 
             TabListDisplay.Add(tabActions.Name, MainV2.DisplayConfiguration.displayAdvActionsTab);
@@ -3360,6 +3362,17 @@ namespace MissionPlanner.GCSViews
                     wpdirection.Stroke = new Pen(Color.Aqua , 4); // Orange line, 2 pixels 
                     gotoLine.Routes.Add(wpdirection);
                 }
+
+                if (MainV2.comPort.BaseStream.IsOpen)
+                {
+                    var packet = MainV2.comPort.MAV.getPacket((uint)MAVLink.MAVLINK_MSG_ID.VFR_HUD);
+                    if (packet != null)
+                    {
+                        var vfr_hud = packet.ToStructure<MAVLink.mavlink_vfr_hud_t>();
+                        label13.Text = vfr_hud.alt.ToString();
+                        label14.Text = vfr_hud.groundspeed.ToString();
+                    }
+                }
                 
                 if (MainV2.comPort.giveComport)
                 {
@@ -4463,7 +4476,6 @@ namespace MissionPlanner.GCSViews
                 var lat = float.Parse(split[0], CultureInfo.InvariantCulture);
                 var lng = float.Parse(split[1], CultureInfo.InvariantCulture);
                 var alt = (float)srtm.getAltitude(lat, lng).alt;
-
                 MainV2.comPort.doCommandInt((byte) MainV2.comPort.sysidcurrent, (byte) MainV2.comPort.compidcurrent,
                     MAVLink.MAV_CMD.DO_SET_ROI, 0, 0, 0, 0, (int) (lat * 1e7),
                     (int) (lng * 1e7),  ((alt)));

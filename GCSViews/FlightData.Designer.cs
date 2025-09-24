@@ -58,6 +58,11 @@ namespace MissionPlanner.GCSViews
             this.button6 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanelQuick = new System.Windows.Forms.TableLayoutPanel();
+            this.tabHUD = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabActions = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BUT_SendMSG = new MissionPlanner.Controls.MyButton();
@@ -256,6 +261,10 @@ namespace MissionPlanner.GCSViews
             this.scriptChecker = new System.Windows.Forms.Timer(this.components);
             this.Messagetabtimer = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceStatusTab = new System.Windows.Forms.BindingSource(this.components);
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MainH)).BeginInit();
             this.MainH.Panel1.SuspendLayout();
             this.MainH.Panel2.SuspendLayout();
@@ -272,6 +281,7 @@ namespace MissionPlanner.GCSViews
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tabHUD.SuspendLayout();
             this.tabActions.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPagemessages.SuspendLayout();
@@ -610,6 +620,7 @@ namespace MissionPlanner.GCSViews
             // 
             this.tabControlactions.ContextMenuStrip = this.contextMenuStripactionstab;
             this.tabControlactions.Controls.Add(this.tabQuick);
+            this.tabControlactions.Controls.Add(this.tabHUD);
             this.tabControlactions.Controls.Add(this.tabActions);
             this.tabControlactions.Controls.Add(this.tabPagemessages);
             this.tabControlactions.Controls.Add(this.tabActionsSimple);
@@ -819,6 +830,40 @@ namespace MissionPlanner.GCSViews
             // 
             resources.ApplyResources(this.tableLayoutPanelQuick, "tableLayoutPanelQuick");
             this.tableLayoutPanelQuick.Name = "tableLayoutPanelQuick";
+            // 
+            // tabHUD
+            // 
+            this.tabHUD.Controls.Add(this.label15);
+            this.tabHUD.Controls.Add(this.label16);
+            this.tabHUD.Controls.Add(this.label17);
+            this.tabHUD.Controls.Add(this.label18);
+            this.tabHUD.Controls.Add(this.label14);
+            this.tabHUD.Controls.Add(this.label13);
+            this.tabHUD.Controls.Add(this.label12);
+            this.tabHUD.Controls.Add(this.label11);
+            resources.ApplyResources(this.tabHUD, "tabHUD");
+            this.tabHUD.Name = "tabHUD";
+            this.tabHUD.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
             // 
             // tabActions
             // 
@@ -3007,6 +3052,26 @@ namespace MissionPlanner.GCSViews
             // 
             this.bindingSourceStatusTab.DataSource = typeof(MissionPlanner.CurrentState);
             // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
             // FlightData
             // 
             this.Controls.Add(this.MainH);
@@ -3035,6 +3100,8 @@ namespace MissionPlanner.GCSViews
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tabHUD.ResumeLayout(false);
+            this.tabHUD.PerformLayout();
             this.tabActions.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -3341,5 +3408,14 @@ namespace MissionPlanner.GCSViews
         private CheckBox checkBox3;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
+        private Label label12;
+        private Label label11;
+        private Label label14;
+        private Label label13;
+        public TabPage tabHUD;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private Label label18;
     }
 }

@@ -80,51 +80,58 @@ namespace MissionPlanner
         private void refreshParams()
         {
             //Gains
-            textBox1.Text = MainV2.comPort.MAV.param["wx_Kp"].ToString();
-            textBox2.Text = MainV2.comPort.MAV.param["wx_Ki"].ToString();
-            textBox3.Text = MainV2.comPort.MAV.param["wx_Kd"].ToString();
-            textBox4.Text = MainV2.comPort.MAV.param["phi_Kp"].ToString();
-            textBox5.Text = MainV2.comPort.MAV.param["phi_Ki"].ToString();
-            textBox6.Text = MainV2.comPort.MAV.param["phi_Kd"].ToString();
-            textBox7.Text = MainV2.comPort.MAV.param["wy_Kp"].ToString();
-            textBox8.Text = MainV2.comPort.MAV.param["wy_Ki"].ToString();
-            textBox9.Text = MainV2.comPort.MAV.param["wy_Kd"].ToString();
-            textBox10.Text = MainV2.comPort.MAV.param["the_Kp"].ToString();
-            textBox11.Text = MainV2.comPort.MAV.param["the_Ki"].ToString();
-            textBox12.Text = MainV2.comPort.MAV.param["the_Kd"].ToString();
-            textBox13.Text = MainV2.comPort.MAV.param["wz_Kp"].ToString();
-            textBox14.Text = MainV2.comPort.MAV.param["wz_Ki"].ToString();
-            textBox15.Text = MainV2.comPort.MAV.param["wz_Kd"].ToString();
-            textBox16.Text = MainV2.comPort.MAV.param["shi_Kp"].ToString();
-            textBox17.Text = MainV2.comPort.MAV.param["shi_Ki"].ToString();
-            textBox18.Text = MainV2.comPort.MAV.param["shi_Kd"].ToString();
-            textBox19.Text = MainV2.comPort.MAV.param["vz_Kp"].ToString();
-            textBox20.Text = MainV2.comPort.MAV.param["vz_Ki"].ToString();
-            textBox21.Text = MainV2.comPort.MAV.param["vz_Kd"].ToString();
-            textBox22.Text = MainV2.comPort.MAV.param["alt_Kp"].ToString();
-            textBox23.Text = MainV2.comPort.MAV.param["alt_Ki"].ToString();
-            textBox24.Text = MainV2.comPort.MAV.param["alt_Kd"].ToString();
-            textBox25.Text = MainV2.comPort.MAV.param["vx_Kp"].ToString();
-            textBox26.Text = MainV2.comPort.MAV.param["vx_Ki"].ToString();
-            textBox27.Text = MainV2.comPort.MAV.param["vx_Kd"].ToString();
-            textBox28.Text = MainV2.comPort.MAV.param["vy_Kp"].ToString();
-            textBox29.Text = MainV2.comPort.MAV.param["vy_Ki"].ToString();
-            textBox30.Text = MainV2.comPort.MAV.param["vy_Kd"].ToString();
+            tb_wx_kp.Text = MainV2.comPort.MAV.param["wx_Kp"].ToString();
+            tb_wx_ki.Text = MainV2.comPort.MAV.param["wx_Ki"].ToString();
+            tb_wx_kd.Text = MainV2.comPort.MAV.param["wx_Kd"].ToString();
+            tb_phi_kp.Text = MainV2.comPort.MAV.param["phi_Kp"].ToString();
+            tb_phi_ki.Text = MainV2.comPort.MAV.param["phi_Ki"].ToString();
+            tb_phi_kd.Text = MainV2.comPort.MAV.param["phi_Kd"].ToString();
+            tb_wy_kp.Text = MainV2.comPort.MAV.param["wy_Kp"].ToString();
+            tb_wy_ki.Text = MainV2.comPort.MAV.param["wy_Ki"].ToString();
+            tb_wy_kd.Text = MainV2.comPort.MAV.param["wy_Kd"].ToString();
+            tb_the_kp.Text = MainV2.comPort.MAV.param["the_Kp"].ToString();
+            tb_the_ki.Text = MainV2.comPort.MAV.param["the_Ki"].ToString();
+            tb_the_kd.Text = MainV2.comPort.MAV.param["the_Kd"].ToString();
+            tb_wz_kp.Text = MainV2.comPort.MAV.param["wz_Kp"].ToString();
+            tb_wz_ki.Text = MainV2.comPort.MAV.param["wz_Ki"].ToString();
+            tb_wz_kd.Text = MainV2.comPort.MAV.param["wz_Kd"].ToString();
+            tb_shi_kp.Text = MainV2.comPort.MAV.param["shi_Kp"].ToString();
+            tb_shi_ki.Text = MainV2.comPort.MAV.param["shi_Ki"].ToString();
+            tb_shi_kd.Text = MainV2.comPort.MAV.param["shi_Kd"].ToString();
+            tb_vz_kp.Text = MainV2.comPort.MAV.param["vz_Kp"].ToString();
+            tb_vz_ki.Text = MainV2.comPort.MAV.param["vz_Ki"].ToString();
+            tb_vz_kd.Text = MainV2.comPort.MAV.param["vz_Kd"].ToString();
+            tb_alt_kp.Text = MainV2.comPort.MAV.param["alt_Kp"].ToString();
+            tb_alt_ki.Text = MainV2.comPort.MAV.param["alt_Ki"].ToString();
+            tb_alt_kd.Text = MainV2.comPort.MAV.param["alt_Kd"].ToString();
+            tb_vx_kp.Text = MainV2.comPort.MAV.param["vx_Kp"].ToString();
+            tb_vx_ki.Text = MainV2.comPort.MAV.param["vx_Ki"].ToString();
+            tb_vx_kd.Text = MainV2.comPort.MAV.param["vx_Kd"].ToString();
+            tb_vy_kp.Text = MainV2.comPort.MAV.param["vy_Kp"].ToString();
+            tb_vy_ki.Text = MainV2.comPort.MAV.param["vy_Ki"].ToString();
+            tb_vy_kd.Text = MainV2.comPort.MAV.param["vy_Kd"].ToString();
+            tb_sxkf.Text = MainV2.comPort.MAV.param["sxkf"].ToString();
+            tb_sykf.Text = MainV2.comPort.MAV.param["sykf"].ToString();
+            tb_sx_Kp.Text = MainV2.comPort.MAV.param["sx_Kp"].ToString();
+            tb_sx_Ki.Text = MainV2.comPort.MAV.param["sx_Ki"].ToString();
+            tb_sy_Kp.Text = MainV2.comPort.MAV.param["sy_Kp"].ToString();
+            tb_sy_Ki.Text = MainV2.comPort.MAV.param["sy_Ki"].ToString();
 
             //Limits
-            textBox37.Text = MainV2.comPort.MAV.param["vh_thhv"].ToString();
-            textBox38.Text = MainV2.comPort.MAV.param["vh_thmax"].ToString();
-            textBox39.Text = MainV2.comPort.MAV.param["vh_thmin"].ToString();
-            textBox40.Text = MainV2.comPort.MAV.param["vh_maxdTv"].ToString();
-            textBox41.Text = MainV2.comPort.MAV.param["vh_mindTv"].ToString();
-            textBox42.Text = MainV2.comPort.MAV.param["vh_dTwx"].ToString();
-            textBox43.Text = MainV2.comPort.MAV.param["vh_dTwy"].ToString();
-            textBox44.Text = MainV2.comPort.MAV.param["vh_dTwz"].ToString();
-            textBox45.Text = MainV2.comPort.MAV.param["vh_phistick"].ToString();
-            textBox46.Text = MainV2.comPort.MAV.param["vh_thestick"].ToString();
-            textBox47.Text = MainV2.comPort.MAV.param["vh_wzstick"].ToString();
-            textBox48.Text = MainV2.comPort.MAV.param["vh_maxalt"].ToString();
-            MessageBox.Show("Params Refreshed");
+            tb_vh_thhv.Text = MainV2.comPort.MAV.param["vh_thhv"].ToString();
+            tb_vh_thmax.Text = MainV2.comPort.MAV.param["vh_thmax"].ToString();
+            tb_vh_thmin.Text = MainV2.comPort.MAV.param["vh_thmin"].ToString();
+            th_vh_maxdTv.Text = MainV2.comPort.MAV.param["vh_maxdTv"].ToString();
+            tb_vh_mindTv.Text = MainV2.comPort.MAV.param["vh_mindTv"].ToString();
+            tb_vh_dTwx.Text = MainV2.comPort.MAV.param["vh_dTwx"].ToString();
+            tb_vh_dTwy.Text = MainV2.comPort.MAV.param["vh_dTwy"].ToString();
+            tb_vh_dTwz.Text = MainV2.comPort.MAV.param["vh_dTwz"].ToString();
+            tb_vh_phistick.Text = MainV2.comPort.MAV.param["vh_phistick"].ToString();
+            tb_vh_thestick.Text = MainV2.comPort.MAV.param["vh_thestick"].ToString();
+            th_vh_wzstick.Text = MainV2.comPort.MAV.param["vh_wzstick"].ToString();
+            tb_vh_maxalt.Text = MainV2.comPort.MAV.param["vh_maxalt"].ToString();
+
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -138,7 +145,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox1.Text.Trim();
+                string input = tb_wx_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -173,7 +180,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox2.Text.Trim();
+                string input = tb_wx_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -208,7 +215,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox3.Text.Trim();
+                string input = tb_wx_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -243,7 +250,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox4.Text.Trim();
+                string input = tb_phi_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -278,7 +285,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox5.Text.Trim();
+                string input = tb_phi_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -313,7 +320,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox6.Text.Trim();
+                string input = tb_phi_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -348,7 +355,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox7.Text.Trim();
+                string input = tb_wy_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -383,7 +390,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox8.Text.Trim();
+                string input = tb_wy_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -418,7 +425,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox9.Text.Trim();
+                string input = tb_wy_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -453,7 +460,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox10.Text.Trim();
+                string input = tb_the_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -488,7 +495,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox11.Text.Trim();
+                string input = tb_the_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -523,7 +530,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox12.Text.Trim();
+                string input = tb_the_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -558,7 +565,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox13.Text.Trim();
+                string input = tb_wz_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -593,7 +600,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox14.Text.Trim();
+                string input = tb_wz_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -628,7 +635,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox15.Text.Trim();
+                string input = tb_wz_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -663,7 +670,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox16.Text.Trim();
+                string input = tb_shi_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -698,7 +705,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox17.Text.Trim();
+                string input = tb_shi_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -733,7 +740,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox18.Text.Trim();
+                string input = tb_shi_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -768,7 +775,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox19.Text.Trim();
+                string input = tb_vz_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -803,7 +810,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox20.Text.Trim();
+                string input = tb_vz_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -838,7 +845,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox21.Text.Trim();
+                string input = tb_vz_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -873,7 +880,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox22.Text.Trim();
+                string input = tb_alt_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -908,7 +915,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox23.Text.Trim();
+                string input = tb_alt_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -943,7 +950,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox24.Text.Trim();
+                string input = tb_alt_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -978,7 +985,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox25.Text.Trim();
+                string input = tb_vx_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1013,7 +1020,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox26.Text.Trim();
+                string input = tb_vx_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1048,7 +1055,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox27.Text.Trim();
+                string input = tb_vx_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1083,7 +1090,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox28.Text.Trim();
+                string input = tb_vy_kp.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1118,7 +1125,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox29.Text.Trim();
+                string input = tb_vy_ki.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1153,7 +1160,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox30.Text.Trim();
+                string input = tb_vy_kd.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1187,7 +1194,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox37.Text.Trim();
+                string input = tb_vh_thhv.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1221,7 +1228,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox38.Text.Trim();
+                string input = tb_vh_thmax.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1255,7 +1262,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox39.Text.Trim();
+                string input = tb_vh_thmin.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1289,7 +1296,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox40.Text.Trim();
+                string input = th_vh_maxdTv.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1323,7 +1330,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox41.Text.Trim();
+                string input = tb_vh_mindTv.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1357,7 +1364,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox42.Text.Trim();
+                string input = tb_vh_dTwx.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1391,7 +1398,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox43.Text.Trim();
+                string input = tb_vh_dTwy.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1425,7 +1432,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox44.Text.Trim();
+                string input = tb_vh_dTwz.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1459,7 +1466,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox45.Text.Trim();
+                string input = tb_vh_phistick.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1493,7 +1500,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox46.Text.Trim();
+                string input = tb_vh_thestick.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1527,7 +1534,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox47.Text.Trim();
+                string input = th_vh_wzstick.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1561,7 +1568,7 @@ namespace MissionPlanner
             {
                 e.SuppressKeyPress = true; // prevent beep
 
-                string input = textBox48.Text.Trim();
+                string input = tb_vh_maxalt.Text.Trim();
 
                 if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
                 {
@@ -1618,5 +1625,348 @@ namespace MissionPlanner
 
             MessageBox.Show("Biases reset", "Info", MessageBoxButtons.OK);
         }
+
+        private async  void tb_sxkf_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = tb_sxkf.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting sxkf to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "sxkf", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void tb_sykf_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = tb_sykf.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting sykf to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "sykf", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private IEnumerable<Control> GetAllControls(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                yield return ctrl;
+                foreach (var child in GetAllControls(ctrl))
+                    yield return child;
+            }
+        }
+
+        private async void tb_sx_Kp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = tb_sx_Kp.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting sx_Kp to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "sx_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void tb_sx_Ki_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = tb_sx_Ki.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting sx_Ki to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "sx_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void tb_sy_Kp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = tb_sy_Kp.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting sy_Kp to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "sy_Kp", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private async void tb_sy_Ki_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // prevent beep
+
+                string input = tb_sy_Ki.Text.Trim();
+
+                if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                {
+                    MessageBox.Show("Invalid number format. Please enter a valid double.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Console.WriteLine($"Setting sy_Ki to {value}");
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "sy_Ki", value);
+                        label14.Text = "Parameter Successfully Updated";
+                        await Task.Delay(5000);
+                        label14.Text = "";
+                        return;
+                    }
+                    catch (TimeoutException ex)
+                    {
+                        continue;
+                    }
+                }
+                MessageBox.Show("Parameter update operation failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private async void btnUpdateAll_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            label14.Text = "Updating parameters...";
+
+            foreach (Control ctrl in GetAllControls(this))
+            {
+                if (ctrl is TextBox tb && tb.Tag != null && tb.Tag.ToString() == "gain")
+                {
+                    // param name comes from textbox name (strip "tb_")
+                    string paramName = tb.Name.StartsWith("tb_") ? tb.Name.Substring(3) : tb.Name;
+                    string input = tb.Text.Trim();
+
+                    if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                    {
+                        MessageBox.Show(
+                            $"Invalid number format in {tb.Name}.",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        continue;
+                    }
+
+                    Console.WriteLine($"Setting {paramName} to {value}");
+
+                    bool success = false;
+                    for (int i = 0; i < 5; i++)
+                    {
+                        try
+                        {
+                            await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, paramName, value);
+                            success = true;
+                            break;
+                        }
+                        catch (TimeoutException)
+                        {
+                            continue;
+                        }
+                    }
+
+                    if (!success)
+                    {
+                        MessageBox.Show(
+                            $"Failed to update {paramName} after retries.",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+                }
+            }
+
+            label14.Text = "All parameters updated.";
+            await Task.Delay(5000);
+            label14.Text = "";
+        }
+
+        private async void btnUpdateLimits_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+
+            label14.Text = "Updating limits...";
+
+            foreach (Control ctrl in GetAllControls(this))
+            {
+                if (ctrl is TextBox tb && tb.Tag?.ToString() == "limit")
+                {
+                    // strip "tb_" if present
+                    string paramName = tb.Name.StartsWith("tb_") ? tb.Name.Substring(3) : tb.Name;
+                    string input = tb.Text.Trim();
+
+                    if (!double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
+                    {
+                        MessageBox.Show(
+                            $"Invalid number format in {tb.Name}.",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        continue;
+                    }
+
+                    Console.WriteLine($"Setting {paramName} to {value}");
+
+                    bool success = false;
+                    for (int i = 0; i < 5; i++)
+                    {
+                        try
+                        {
+                            await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, paramName, value);
+                            success = true;
+                            break;
+                        }
+                        catch (TimeoutException)
+                        {
+                            continue;
+                        }
+                    }
+
+                    if (!success)
+                    {
+                        MessageBox.Show(
+                            $"Failed to update {paramName} after retries.",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+
+                    // throttle requests so autopilot isn't spammed
+                    await Task.Delay(200);
+                }
+            }
+
+            label14.Text = "Limits updated.";
+            await Task.Delay(5000);
+            label14.Text = "";
+        }
+
     }
 }

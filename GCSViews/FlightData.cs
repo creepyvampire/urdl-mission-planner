@@ -6828,19 +6828,65 @@ namespace MissionPlanner.GCSViews
             );
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            float p1 = checkBox1.Checked ? 1 : 0;
-            float p2 = checkBox2.Checked ? 1 : 0;
-            float p3 = checkBox3.Checked ? 1 : 0;
-            float p4 = checkBox4.Checked ? 1 : 0;
-            float p5 = checkBox5.Checked ? 1 : 0;
-            Console.WriteLine($"FAILSAFE CHECKSTATE: {p1} {p2} {p3} {p4} {p5}");
             if (!MainV2.comPort.BaseStream.IsOpen)
             {
                 return;
             }
-            MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, p1, p2, p3, p4, p5, 0, 0);
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, 1, 0, 0, 0, 0, 0, 0);
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, 0, 1, 0, 0, 0, 0, 0);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, 0, 0, 1, 0, 0, 0, 0);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, 0, 0, 0, 1, 0, 0, 0);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, 0, 0, 0, 0, 1, 0, 0);
+        }
+        /*
+private void button11_Click(object sender, EventArgs e)
+{
+float p1 = checkBox1.Checked ? 1 : 0;
+float p2 = checkBox2.Checked ? 1 : 0;
+float p3 = checkBox3.Checked ? 1 : 0;
+float p4 = checkBox4.Checked ? 1 : 0;
+float p5 = checkBox5.Checked ? 1 : 0;
+Console.WriteLine($"FAILSAFE CHECKSTATE: {p1} {p2} {p3} {p4} {p5}");
+if (!MainV2.comPort.BaseStream.IsOpen)
+{
+return;
+}
+MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, p1, p2, p3, p4, p5, 0, 0);
+}
+*/
     }
 }

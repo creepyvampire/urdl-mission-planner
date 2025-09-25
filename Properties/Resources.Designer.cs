@@ -1389,6 +1389,16 @@ namespace MissionPlanner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap play_button {
+            get {
+                object obj = ResourceManager.GetObject("play-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlusFrames_02 {
             get {
                 object obj = ResourceManager.GetObject("PlusFrames_02", resourceCulture);
@@ -1692,6 +1702,16 @@ namespace MissionPlanner.Properties {
         internal static System.Drawing.Bitmap Shutter {
             get {
                 object obj = ResourceManager.GetObject("Shutter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap siren {
+            get {
+                object obj = ResourceManager.GetObject("siren", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

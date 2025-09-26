@@ -79,57 +79,64 @@ namespace MissionPlanner
 
         private void refreshParams()
         {
-            //Gains
-            tb_wx_kp.Text = MainV2.comPort.MAV.param["wx_Kp"].ToString();
-            tb_wx_ki.Text = MainV2.comPort.MAV.param["wx_Ki"].ToString();
-            tb_wx_kd.Text = MainV2.comPort.MAV.param["wx_Kd"].ToString();
-            tb_phi_kp.Text = MainV2.comPort.MAV.param["phi_Kp"].ToString();
-            tb_phi_ki.Text = MainV2.comPort.MAV.param["phi_Ki"].ToString();
-            tb_phi_kd.Text = MainV2.comPort.MAV.param["phi_Kd"].ToString();
-            tb_wy_kp.Text = MainV2.comPort.MAV.param["wy_Kp"].ToString();
-            tb_wy_ki.Text = MainV2.comPort.MAV.param["wy_Ki"].ToString();
-            tb_wy_kd.Text = MainV2.comPort.MAV.param["wy_Kd"].ToString();
-            tb_the_kp.Text = MainV2.comPort.MAV.param["the_Kp"].ToString();
-            tb_the_ki.Text = MainV2.comPort.MAV.param["the_Ki"].ToString();
-            tb_the_kd.Text = MainV2.comPort.MAV.param["the_Kd"].ToString();
-            tb_wz_kp.Text = MainV2.comPort.MAV.param["wz_Kp"].ToString();
-            tb_wz_ki.Text = MainV2.comPort.MAV.param["wz_Ki"].ToString();
-            tb_wz_kd.Text = MainV2.comPort.MAV.param["wz_Kd"].ToString();
-            tb_shi_kp.Text = MainV2.comPort.MAV.param["shi_Kp"].ToString();
-            tb_shi_ki.Text = MainV2.comPort.MAV.param["shi_Ki"].ToString();
-            tb_shi_kd.Text = MainV2.comPort.MAV.param["shi_Kd"].ToString();
-            tb_vz_kp.Text = MainV2.comPort.MAV.param["vz_Kp"].ToString();
-            tb_vz_ki.Text = MainV2.comPort.MAV.param["vz_Ki"].ToString();
-            tb_vz_kd.Text = MainV2.comPort.MAV.param["vz_Kd"].ToString();
-            tb_alt_kp.Text = MainV2.comPort.MAV.param["alt_Kp"].ToString();
-            tb_alt_ki.Text = MainV2.comPort.MAV.param["alt_Ki"].ToString();
-            tb_alt_kd.Text = MainV2.comPort.MAV.param["alt_Kd"].ToString();
-            tb_vx_kp.Text = MainV2.comPort.MAV.param["vx_Kp"].ToString();
-            tb_vx_ki.Text = MainV2.comPort.MAV.param["vx_Ki"].ToString();
-            tb_vx_kd.Text = MainV2.comPort.MAV.param["vx_Kd"].ToString();
-            tb_vy_kp.Text = MainV2.comPort.MAV.param["vy_Kp"].ToString();
-            tb_vy_ki.Text = MainV2.comPort.MAV.param["vy_Ki"].ToString();
-            tb_vy_kd.Text = MainV2.comPort.MAV.param["vy_Kd"].ToString();
-            tb_sxkf.Text = MainV2.comPort.MAV.param["sxkf"].ToString();
-            tb_sykf.Text = MainV2.comPort.MAV.param["sykf"].ToString();
-            tb_sx_Kp.Text = MainV2.comPort.MAV.param["sx_Kp"].ToString();
-            tb_sx_Ki.Text = MainV2.comPort.MAV.param["sx_Ki"].ToString();
-            tb_sy_Kp.Text = MainV2.comPort.MAV.param["sy_Kp"].ToString();
-            tb_sy_Ki.Text = MainV2.comPort.MAV.param["sy_Ki"].ToString();
+            try
+            {
+                //Gains
+                tb_wx_kp.Text = MainV2.comPort.MAV.param["wx_Kp"].ToString();
+                tb_wx_ki.Text = MainV2.comPort.MAV.param["wx_Ki"].ToString();
+                tb_wx_kd.Text = MainV2.comPort.MAV.param["wx_Kd"].ToString();
+                tb_phi_kp.Text = MainV2.comPort.MAV.param["phi_Kp"].ToString();
+                tb_phi_ki.Text = MainV2.comPort.MAV.param["phi_Ki"].ToString();
+                tb_phi_kd.Text = MainV2.comPort.MAV.param["phi_Kd"].ToString();
+                tb_wy_kp.Text = MainV2.comPort.MAV.param["wy_Kp"].ToString();
+                tb_wy_ki.Text = MainV2.comPort.MAV.param["wy_Ki"].ToString();
+                tb_wy_kd.Text = MainV2.comPort.MAV.param["wy_Kd"].ToString();
+                tb_the_kp.Text = MainV2.comPort.MAV.param["the_Kp"].ToString();
+                tb_the_ki.Text = MainV2.comPort.MAV.param["the_Ki"].ToString();
+                tb_the_kd.Text = MainV2.comPort.MAV.param["the_Kd"].ToString();
+                tb_wz_kp.Text = MainV2.comPort.MAV.param["wz_Kp"].ToString();
+                tb_wz_ki.Text = MainV2.comPort.MAV.param["wz_Ki"].ToString();
+                tb_wz_kd.Text = MainV2.comPort.MAV.param["wz_Kd"].ToString();
+                tb_shi_kp.Text = MainV2.comPort.MAV.param["shi_Kp"].ToString();
+                tb_shi_ki.Text = MainV2.comPort.MAV.param["shi_Ki"].ToString();
+                tb_shi_kd.Text = MainV2.comPort.MAV.param["shi_Kd"].ToString();
+                tb_vz_kp.Text = MainV2.comPort.MAV.param["vz_Kp"].ToString();
+                tb_vz_ki.Text = MainV2.comPort.MAV.param["vz_Ki"].ToString();
+                tb_vz_kd.Text = MainV2.comPort.MAV.param["vz_Kd"].ToString();
+                tb_alt_kp.Text = MainV2.comPort.MAV.param["alt_Kp"].ToString();
+                tb_alt_ki.Text = MainV2.comPort.MAV.param["alt_Ki"].ToString();
+                tb_alt_kd.Text = MainV2.comPort.MAV.param["alt_Kd"].ToString();
+                tb_vx_kp.Text = MainV2.comPort.MAV.param["vx_Kp"].ToString();
+                tb_vx_ki.Text = MainV2.comPort.MAV.param["vx_Ki"].ToString();
+                tb_vx_kd.Text = MainV2.comPort.MAV.param["vx_Kd"].ToString();
+                tb_vy_kp.Text = MainV2.comPort.MAV.param["vy_Kp"].ToString();
+                tb_vy_ki.Text = MainV2.comPort.MAV.param["vy_Ki"].ToString();
+                tb_vy_kd.Text = MainV2.comPort.MAV.param["vy_Kd"].ToString();
+                tb_sxkf.Text = MainV2.comPort.MAV.param["sxkf"].ToString();
+                tb_sykf.Text = MainV2.comPort.MAV.param["sykf"].ToString();
+                tb_sx_Kp.Text = MainV2.comPort.MAV.param["sx_Kp"].ToString();
+                tb_sx_Ki.Text = MainV2.comPort.MAV.param["sx_Ki"].ToString();
+                tb_sy_Kp.Text = MainV2.comPort.MAV.param["sy_Kp"].ToString();
+                tb_sy_Ki.Text = MainV2.comPort.MAV.param["sy_Ki"].ToString();
 
-            //Limits
-            tb_vh_thhv.Text = MainV2.comPort.MAV.param["vh_thhv"].ToString();
-            tb_vh_thmax.Text = MainV2.comPort.MAV.param["vh_thmax"].ToString();
-            tb_vh_thmin.Text = MainV2.comPort.MAV.param["vh_thmin"].ToString();
-            th_vh_maxdTv.Text = MainV2.comPort.MAV.param["vh_maxdTv"].ToString();
-            tb_vh_mindTv.Text = MainV2.comPort.MAV.param["vh_mindTv"].ToString();
-            tb_vh_dTwx.Text = MainV2.comPort.MAV.param["vh_dTwx"].ToString();
-            tb_vh_dTwy.Text = MainV2.comPort.MAV.param["vh_dTwy"].ToString();
-            tb_vh_dTwz.Text = MainV2.comPort.MAV.param["vh_dTwz"].ToString();
-            tb_vh_phistick.Text = MainV2.comPort.MAV.param["vh_phistick"].ToString();
-            tb_vh_thestick.Text = MainV2.comPort.MAV.param["vh_thestick"].ToString();
-            th_vh_wzstick.Text = MainV2.comPort.MAV.param["vh_wzstick"].ToString();
-            tb_vh_maxalt.Text = MainV2.comPort.MAV.param["vh_maxalt"].ToString();
+                //Limits
+                tb_vh_thhv.Text = MainV2.comPort.MAV.param["vh_thhv"].ToString();
+                tb_vh_thmax.Text = MainV2.comPort.MAV.param["vh_thmax"].ToString();
+                tb_vh_thmin.Text = MainV2.comPort.MAV.param["vh_thmin"].ToString();
+                th_vh_maxdTv.Text = MainV2.comPort.MAV.param["vh_maxdTv"].ToString();
+                tb_vh_mindTv.Text = MainV2.comPort.MAV.param["vh_mindTv"].ToString();
+                tb_vh_dTwx.Text = MainV2.comPort.MAV.param["vh_dTwx"].ToString();
+                tb_vh_dTwy.Text = MainV2.comPort.MAV.param["vh_dTwy"].ToString();
+                tb_vh_dTwz.Text = MainV2.comPort.MAV.param["vh_dTwz"].ToString();
+                tb_vh_phistick.Text = MainV2.comPort.MAV.param["vh_phistick"].ToString();
+                tb_vh_thestick.Text = MainV2.comPort.MAV.param["vh_thestick"].ToString();
+                th_vh_wzstick.Text = MainV2.comPort.MAV.param["vh_wzstick"].ToString();
+                tb_vh_maxalt.Text = MainV2.comPort.MAV.param["vh_maxalt"].ToString();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Failed to load parameters, Try again.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
 
            
         }
@@ -141,6 +148,10 @@ namespace MissionPlanner
 
         private async void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -176,6 +187,10 @@ namespace MissionPlanner
 
         private async void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -211,6 +226,10 @@ namespace MissionPlanner
 
         private async void textBox3_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -246,6 +265,10 @@ namespace MissionPlanner
 
         private async void textBox4_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -281,6 +304,10 @@ namespace MissionPlanner
 
         private async void textBox5_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -316,6 +343,10 @@ namespace MissionPlanner
 
         private async void textBox6_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -351,6 +382,10 @@ namespace MissionPlanner
 
         private async void textBox7_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -386,6 +421,10 @@ namespace MissionPlanner
 
         private async void textBox8_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -421,6 +460,10 @@ namespace MissionPlanner
 
         private async void textBox9_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -456,6 +499,10 @@ namespace MissionPlanner
 
         private async void textBox10_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -491,6 +538,10 @@ namespace MissionPlanner
 
         private async void textBox11_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -526,6 +577,10 @@ namespace MissionPlanner
 
         private async void textBox12_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -561,6 +616,10 @@ namespace MissionPlanner
 
         private async void textBox13_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -596,6 +655,10 @@ namespace MissionPlanner
 
         private async void textBox14_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -631,6 +694,10 @@ namespace MissionPlanner
 
         private async void textBox15_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -666,6 +733,10 @@ namespace MissionPlanner
 
         private async void textBox16_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -701,6 +772,10 @@ namespace MissionPlanner
 
         private async void textBox17_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -736,6 +811,10 @@ namespace MissionPlanner
 
         private async void textBox18_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -771,6 +850,10 @@ namespace MissionPlanner
 
         private async void textBox19_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -806,6 +889,10 @@ namespace MissionPlanner
 
         private async void textBox20_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -841,6 +928,10 @@ namespace MissionPlanner
 
         private async void textBox21_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -876,6 +967,10 @@ namespace MissionPlanner
 
         private async void textBox22_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -911,6 +1006,10 @@ namespace MissionPlanner
 
         private async void textBox23_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -946,6 +1045,10 @@ namespace MissionPlanner
 
         private async void textBox24_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -981,6 +1084,10 @@ namespace MissionPlanner
 
         private async void textBox25_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1016,6 +1123,10 @@ namespace MissionPlanner
 
         private async void textBox26_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1051,6 +1162,10 @@ namespace MissionPlanner
 
         private async void textBox27_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1086,6 +1201,10 @@ namespace MissionPlanner
 
         private async void textBox28_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1121,6 +1240,10 @@ namespace MissionPlanner
 
         private async void textBox29_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1156,6 +1279,10 @@ namespace MissionPlanner
 
         private async void textBox30_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1190,6 +1317,10 @@ namespace MissionPlanner
 
         private async void textBox37_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1224,6 +1355,10 @@ namespace MissionPlanner
 
         private async void textBox38_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1258,6 +1393,10 @@ namespace MissionPlanner
 
         private async void textBox39_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1292,6 +1431,10 @@ namespace MissionPlanner
 
         private async void textBox40_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1326,6 +1469,10 @@ namespace MissionPlanner
 
         private async void textBox41_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1360,6 +1507,10 @@ namespace MissionPlanner
 
         private async void textBox42_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1394,6 +1545,10 @@ namespace MissionPlanner
 
         private async void textBox43_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1428,6 +1583,10 @@ namespace MissionPlanner
 
         private async void textBox44_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1462,6 +1621,10 @@ namespace MissionPlanner
 
         private async void textBox45_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1496,6 +1659,10 @@ namespace MissionPlanner
 
         private async void textBox46_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1530,6 +1697,10 @@ namespace MissionPlanner
 
         private async void textBox47_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1564,6 +1735,10 @@ namespace MissionPlanner
 
         private async void textBox48_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1628,6 +1803,10 @@ namespace MissionPlanner
 
         private async  void tb_sxkf_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1662,6 +1841,10 @@ namespace MissionPlanner
 
         private async void tb_sykf_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1706,6 +1889,10 @@ namespace MissionPlanner
 
         private async void tb_sx_Kp_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1740,6 +1927,10 @@ namespace MissionPlanner
 
         private async void tb_sx_Ki_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1774,6 +1965,10 @@ namespace MissionPlanner
 
         private async void tb_sy_Kp_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep
@@ -1809,6 +2004,10 @@ namespace MissionPlanner
 
         private async void tb_sy_Ki_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // prevent beep

@@ -54,6 +54,7 @@ namespace MissionPlanner
             this.toolStripConnectionControl = new MissionPlanner.Controls.ToolStripConnectionControl();
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.imageLabel1 = new MissionPlanner.Controls.ImageLabel();
             this.status1 = new MissionPlanner.Controls.Status();
             this.MainMenu.SuspendLayout();
             this.CTX_mainmenu.SuspendLayout();
@@ -209,11 +210,19 @@ namespace MissionPlanner
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.imageLabel1);
             this.panel1.Controls.Add(this.status1);
             this.panel1.Controls.Add(this.MainMenu);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
+            // 
+            // imageLabel1
+            // 
+            this.imageLabel1.BackColor = System.Drawing.Color.Black;
+            this.imageLabel1.Image = global::MissionPlanner.Properties.Resources.urdl_logo_transparent;
+            resources.ApplyResources(this.imageLabel1, "imageLabel1");
+            this.imageLabel1.Name = "imageLabel1";
             // 
             // status1
             // 
@@ -261,5 +270,6 @@ namespace MissionPlanner
         private System.Windows.Forms.ToolStripMenuItem connectionListToolStripMenuItem;
         public System.Windows.Forms.ToolStripButton MenuHelp;
         public Controls.Status status1;
+        private Controls.ImageLabel imageLabel1;
     }
 }

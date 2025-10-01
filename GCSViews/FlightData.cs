@@ -3347,16 +3347,12 @@ namespace MissionPlanner.GCSViews
                 Thread.Sleep(1000);
             }
 
-            bool _isDrawn = false;
-
             while (threadrun)
             {
                 gotoLine.Routes.Clear();
                 if (MainV2.comPort.BaseStream.IsOpen && MainV2.comPort.MAV.GuidedMode.x!=0)
                 {
                     PointLatLng currentDroneloc = new PointLatLng(MainV2.comPort.MAV.cs.lat, MainV2.comPort.MAV.cs.lng);
-                    Console.WriteLine($"1: {MainV2.comPort.MAV.cs.lat}\n2: {((double)MainV2.comPort.MAV.GuidedMode.x)/1e7}");
-                    //Console.WriteLine($"Target:");
                     PointLatLng targetloc = new PointLatLng(((double) MainV2.comPort.MAV.GuidedMode.x)/1e7, ((double)MainV2.comPort.MAV.GuidedMode.y)/1e7);
                     GMapRoute wpdirection = new GMapRoute(new PointLatLng[] { currentDroneloc, targetloc }, "wpdirection");
                     wpdirection.Stroke = new Pen(Color.Aqua , 4); // Orange line, 2 pixels 
@@ -6872,6 +6868,107 @@ namespace MissionPlanner.GCSViews
             }
             MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, 0, 0, 0, 0, 1, 0, 0);
         }
+
+
+        RollingPointPairList rollList = new RollingPointPairList(1200);
+        CurveItem rollListCurve = null;
+        RollingPointPairList pitchList = new RollingPointPairList(1200);
+        CurveItem pitchListCurve = null;
+        RollingPointPairList yawList = new RollingPointPairList(1200);
+        CurveItem yawListCurve = null;
+        private int? attitudeSub = null;
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            double time = (Environment.TickCount - tickStart) / 1000.0;
+
+            if (checkBox1.Checked)
+            {
+                if (attitudeSub == null)
+                {
+                    attitudeSub = MainV2.comPort.SubscribeToPacketType(MAVLink.MAVLINK_MSG_ID.ATTITUDE, message =>
+                    {
+                        var attitude = (MAVLink.mavlink_attitude_t)message.data;
+                        double t = (Environment.TickCount - tickStart) / 1000.0;
+                        rollList.Add(t, attitude.roll);
+                        pitchList.Add(t, attitude.pitch);
+                        yawList.Add(t, attitude.yaw);
+                        return true;
+                    }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+                }
+                rollListCurve = zg1.GraphPane.AddCurve("Roll", rollList, Color.Red);
+                zg1.AxisChange();
+                zg1.Invalidate();
+                zg1.Refresh();
+            }
+            else
+            {
+                zg1.GraphPane.CurveList.Remove(rollListCurve);
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            double time = (Environment.TickCount - tickStart) / 1000.0;
+
+            if (checkBox3.Checked)
+            {
+                if (attitudeSub == null)
+                {
+                    attitudeSub = MainV2.comPort.SubscribeToPacketType(MAVLink.MAVLINK_MSG_ID.ATTITUDE, message =>
+                    {
+                        var attitude = (MAVLink.mavlink_attitude_t)message.data;
+                        double t = (Environment.TickCount - tickStart) / 1000.0;
+                        rollList.Add(t, attitude.roll);
+                        pitchList.Add(t, attitude.pitch);
+                        yawList.Add(t, attitude.yaw);
+                        return true;
+                    }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+                }
+                pitchListCurve = zg1.GraphPane.AddCurve("Pitch", pitchList, Color.Yellow);
+                zg1.AxisChange();
+                zg1.Invalidate();
+                zg1.Refresh();
+            }
+            else
+            {
+                zg1.GraphPane.CurveList.Remove(pitchListCurve);
+            }
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            double time = (Environment.TickCount - tickStart) / 1000.0;
+
+            if (checkBox5.Checked)
+            {
+                if (attitudeSub == null)
+                {
+                    attitudeSub = MainV2.comPort.SubscribeToPacketType(MAVLink.MAVLINK_MSG_ID.ATTITUDE, message =>
+                    {
+                        var attitude = (MAVLink.mavlink_attitude_t)message.data;
+                        double t = (Environment.TickCount - tickStart) / 1000.0;
+                        rollList.Add(t, attitude.roll);
+                        pitchList.Add(t, attitude.pitch);
+                        yawList.Add(t, attitude.yaw);
+                        return true;
+                    }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+                }
+                yawListCurve = zg1.GraphPane.AddCurve("Yaw", yawList, Color.LightBlue);
+                zg1.AxisChange();
+                zg1.Invalidate();
+                zg1.Refresh();
+            }
+            else
+            {
+                zg1.GraphPane.CurveList.Remove(yawListCurve);
+            }
+        }
         /*
 private void button11_Click(object sender, EventArgs e)
 {
@@ -6888,5 +6985,28 @@ return;
 MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, p1, p2, p3, p4, p5, 0, 0);
 }
 */
+
+        /*
+         * hbSub = MainV2.comPort.SubscribeToPacketType(MAVLink.MAVLINK_MSG_ID.HEARTBEAT, message =>
+                {
+                    var hb = (MAVLink.mavlink_heartbeat_t)message.data;
+                    if((hb.base_mode & (byte)MAVLink.MAV_MODE_FLAG.SAFETY_ARMED) !=0)
+                    {
+                        _isArmed = true;
+                        button2.Text = "IDLE";
+                        button2.BackColor = Color.LawnGreen;
+                        button2.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        _isArmed= false;
+                        button2.Text = "ARM";
+                        button2.BackColor = Color.Red;
+                        button2.ForeColor = Color.White;
+                    }
+                    return true;
+                },
+                MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+         */
     }
 }

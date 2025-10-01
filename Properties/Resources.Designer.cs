@@ -1789,6 +1789,16 @@ namespace MissionPlanner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap urdl_logo_transparent {
+            get {
+                object obj = ResourceManager.GetObject("urdl_logo_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wizardicon {
             get {
                 object obj = ResourceManager.GetObject("wizardicon", resourceCulture);

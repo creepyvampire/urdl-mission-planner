@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tb_wx_kp = new System.Windows.Forms.TextBox();
-            this.tb_wx_ki = new System.Windows.Forms.TextBox();
-            this.tb_wx_kd = new System.Windows.Forms.TextBox();
-            this.tb_phi_kp = new System.Windows.Forms.TextBox();
-            this.tb_phi_ki = new System.Windows.Forms.TextBox();
-            this.tb_phi_kd = new System.Windows.Forms.TextBox();
-            this.tb_wy_kp = new System.Windows.Forms.TextBox();
-            this.tb_wy_ki = new System.Windows.Forms.TextBox();
-            this.tb_wy_kd = new System.Windows.Forms.TextBox();
-            this.tb_the_kp = new System.Windows.Forms.TextBox();
-            this.tb_the_ki = new System.Windows.Forms.TextBox();
-            this.tb_the_kd = new System.Windows.Forms.TextBox();
-            this.tb_wz_kp = new System.Windows.Forms.TextBox();
-            this.tb_wz_ki = new System.Windows.Forms.TextBox();
-            this.tb_wz_kd = new System.Windows.Forms.TextBox();
-            this.tb_shi_kp = new System.Windows.Forms.TextBox();
-            this.tb_shi_ki = new System.Windows.Forms.TextBox();
-            this.tb_shi_kd = new System.Windows.Forms.TextBox();
-            this.tb_vz_kp = new System.Windows.Forms.TextBox();
-            this.tb_vz_ki = new System.Windows.Forms.TextBox();
-            this.tb_vz_kd = new System.Windows.Forms.TextBox();
-            this.tb_alt_kp = new System.Windows.Forms.TextBox();
-            this.tb_alt_ki = new System.Windows.Forms.TextBox();
-            this.tb_alt_kd = new System.Windows.Forms.TextBox();
-            this.tb_vx_kp = new System.Windows.Forms.TextBox();
-            this.tb_vx_ki = new System.Windows.Forms.TextBox();
-            this.tb_vx_kd = new System.Windows.Forms.TextBox();
-            this.tb_vy_kp = new System.Windows.Forms.TextBox();
-            this.tb_vy_ki = new System.Windows.Forms.TextBox();
-            this.tb_vy_kd = new System.Windows.Forms.TextBox();
+            this.tb_wx_Kp = new System.Windows.Forms.TextBox();
+            this.tb_wx_Ki = new System.Windows.Forms.TextBox();
+            this.tb_wx_Kd = new System.Windows.Forms.TextBox();
+            this.tb_phi_Kp = new System.Windows.Forms.TextBox();
+            this.tb_phi_Ki = new System.Windows.Forms.TextBox();
+            this.tb_phi_Kd = new System.Windows.Forms.TextBox();
+            this.tb_wy_Kp = new System.Windows.Forms.TextBox();
+            this.tb_wy_Ki = new System.Windows.Forms.TextBox();
+            this.tb_wy_Kd = new System.Windows.Forms.TextBox();
+            this.tb_the_Kp = new System.Windows.Forms.TextBox();
+            this.tb_the_Ki = new System.Windows.Forms.TextBox();
+            this.tb_the_Kd = new System.Windows.Forms.TextBox();
+            this.tb_wz_Kp = new System.Windows.Forms.TextBox();
+            this.tb_wz_Ki = new System.Windows.Forms.TextBox();
+            this.tb_wz_Kd = new System.Windows.Forms.TextBox();
+            this.tb_shi_Kp = new System.Windows.Forms.TextBox();
+            this.tb_shi_Ki = new System.Windows.Forms.TextBox();
+            this.tb_shi_Kd = new System.Windows.Forms.TextBox();
+            this.tb_vz_Kp = new System.Windows.Forms.TextBox();
+            this.tb_vz_Ki = new System.Windows.Forms.TextBox();
+            this.tb_vz_Kd = new System.Windows.Forms.TextBox();
+            this.tb_alt_Kp = new System.Windows.Forms.TextBox();
+            this.tb_alt_Ki = new System.Windows.Forms.TextBox();
+            this.tb_alt_Kd = new System.Windows.Forms.TextBox();
+            this.tb_vx_Kp = new System.Windows.Forms.TextBox();
+            this.tb_vx_Ki = new System.Windows.Forms.TextBox();
+            this.tb_vx_Kd = new System.Windows.Forms.TextBox();
+            this.tb_vy_Kp = new System.Windows.Forms.TextBox();
+            this.tb_vy_Ki = new System.Windows.Forms.TextBox();
+            this.tb_vy_Kd = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,12 +74,21 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.tb_sx_Kp = new System.Windows.Forms.TextBox();
+            this.tb_sy_Ki = new System.Windows.Forms.TextBox();
+            this.tb_sx_Ki = new System.Windows.Forms.TextBox();
+            this.tb_sy_Kp = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.tb_sykf = new System.Windows.Forms.TextBox();
             this.tb_sxkf = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -120,296 +129,287 @@
             this.tb_vh_thmin = new System.Windows.Forms.TextBox();
             this.tb_vh_thmax = new System.Windows.Forms.TextBox();
             this.tb_vh_thhv = new System.Windows.Forms.TextBox();
-            this.tb_sy_Ki = new System.Windows.Forms.TextBox();
-            this.tb_sy_Kp = new System.Windows.Forms.TextBox();
-            this.tb_sx_Ki = new System.Windows.Forms.TextBox();
-            this.tb_sx_Kp = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tb_wx_kp
+            // tb_wx_Kp
             // 
-            this.tb_wx_kp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tb_wx_kp.Location = new System.Drawing.Point(56, 70);
-            this.tb_wx_kp.Name = "tb_wx_kp";
-            this.tb_wx_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_wx_kp.TabIndex = 0;
-            this.tb_wx_kp.Tag = "gain";
-            this.tb_wx_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.tb_wx_Kp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tb_wx_Kp.Location = new System.Drawing.Point(56, 70);
+            this.tb_wx_Kp.Name = "tb_wx_Kp";
+            this.tb_wx_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_wx_Kp.TabIndex = 0;
+            this.tb_wx_Kp.Tag = "gain";
+            this.tb_wx_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // tb_wx_ki
+            // tb_wx_Ki
             // 
-            this.tb_wx_ki.Location = new System.Drawing.Point(140, 70);
-            this.tb_wx_ki.Name = "tb_wx_ki";
-            this.tb_wx_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_wx_ki.TabIndex = 1;
-            this.tb_wx_ki.Tag = "gain";
-            this.tb_wx_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            this.tb_wx_Ki.Location = new System.Drawing.Point(140, 70);
+            this.tb_wx_Ki.Name = "tb_wx_Ki";
+            this.tb_wx_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_wx_Ki.TabIndex = 1;
+            this.tb_wx_Ki.Tag = "gain";
+            this.tb_wx_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
-            // tb_wx_kd
+            // tb_wx_Kd
             // 
-            this.tb_wx_kd.Location = new System.Drawing.Point(224, 70);
-            this.tb_wx_kd.Name = "tb_wx_kd";
-            this.tb_wx_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_wx_kd.TabIndex = 2;
-            this.tb_wx_kd.Tag = "gain";
-            this.tb_wx_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
+            this.tb_wx_Kd.Location = new System.Drawing.Point(224, 70);
+            this.tb_wx_Kd.Name = "tb_wx_Kd";
+            this.tb_wx_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_wx_Kd.TabIndex = 2;
+            this.tb_wx_Kd.Tag = "gain";
+            this.tb_wx_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
             // 
-            // tb_phi_kp
+            // tb_phi_Kp
             // 
-            this.tb_phi_kp.Location = new System.Drawing.Point(308, 70);
-            this.tb_phi_kp.Name = "tb_phi_kp";
-            this.tb_phi_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_phi_kp.TabIndex = 3;
-            this.tb_phi_kp.Tag = "gain";
-            this.tb_phi_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
+            this.tb_phi_Kp.Location = new System.Drawing.Point(308, 70);
+            this.tb_phi_Kp.Name = "tb_phi_Kp";
+            this.tb_phi_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_phi_Kp.TabIndex = 3;
+            this.tb_phi_Kp.Tag = "gain";
+            this.tb_phi_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
             // 
-            // tb_phi_ki
+            // tb_phi_Ki
             // 
-            this.tb_phi_ki.Location = new System.Drawing.Point(392, 70);
-            this.tb_phi_ki.Name = "tb_phi_ki";
-            this.tb_phi_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_phi_ki.TabIndex = 4;
-            this.tb_phi_ki.Tag = "gain";
-            this.tb_phi_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
+            this.tb_phi_Ki.Location = new System.Drawing.Point(392, 70);
+            this.tb_phi_Ki.Name = "tb_phi_Ki";
+            this.tb_phi_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_phi_Ki.TabIndex = 4;
+            this.tb_phi_Ki.Tag = "gain";
+            this.tb_phi_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
             // 
-            // tb_phi_kd
+            // tb_phi_Kd
             // 
-            this.tb_phi_kd.Location = new System.Drawing.Point(476, 70);
-            this.tb_phi_kd.Name = "tb_phi_kd";
-            this.tb_phi_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_phi_kd.TabIndex = 5;
-            this.tb_phi_kd.Tag = "gain";
-            this.tb_phi_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox6_KeyDown);
+            this.tb_phi_Kd.Location = new System.Drawing.Point(476, 70);
+            this.tb_phi_Kd.Name = "tb_phi_Kd";
+            this.tb_phi_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_phi_Kd.TabIndex = 5;
+            this.tb_phi_Kd.Tag = "gain";
+            this.tb_phi_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox6_KeyDown);
             // 
-            // tb_wy_kp
+            // tb_wy_Kp
             // 
-            this.tb_wy_kp.Location = new System.Drawing.Point(56, 97);
-            this.tb_wy_kp.Name = "tb_wy_kp";
-            this.tb_wy_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_wy_kp.TabIndex = 6;
-            this.tb_wy_kp.Tag = "gain";
-            this.tb_wy_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox7_KeyDown);
+            this.tb_wy_Kp.Location = new System.Drawing.Point(56, 97);
+            this.tb_wy_Kp.Name = "tb_wy_Kp";
+            this.tb_wy_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_wy_Kp.TabIndex = 6;
+            this.tb_wy_Kp.Tag = "gain";
+            this.tb_wy_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox7_KeyDown);
             // 
-            // tb_wy_ki
+            // tb_wy_Ki
             // 
-            this.tb_wy_ki.Location = new System.Drawing.Point(140, 97);
-            this.tb_wy_ki.Name = "tb_wy_ki";
-            this.tb_wy_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_wy_ki.TabIndex = 7;
-            this.tb_wy_ki.Tag = "gain";
-            this.tb_wy_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox8_KeyDown);
+            this.tb_wy_Ki.Location = new System.Drawing.Point(140, 97);
+            this.tb_wy_Ki.Name = "tb_wy_Ki";
+            this.tb_wy_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_wy_Ki.TabIndex = 7;
+            this.tb_wy_Ki.Tag = "gain";
+            this.tb_wy_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox8_KeyDown);
             // 
-            // tb_wy_kd
+            // tb_wy_Kd
             // 
-            this.tb_wy_kd.Location = new System.Drawing.Point(224, 97);
-            this.tb_wy_kd.Name = "tb_wy_kd";
-            this.tb_wy_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_wy_kd.TabIndex = 8;
-            this.tb_wy_kd.Tag = "gain";
-            this.tb_wy_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox9_KeyDown);
+            this.tb_wy_Kd.Location = new System.Drawing.Point(224, 97);
+            this.tb_wy_Kd.Name = "tb_wy_Kd";
+            this.tb_wy_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_wy_Kd.TabIndex = 8;
+            this.tb_wy_Kd.Tag = "gain";
+            this.tb_wy_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox9_KeyDown);
             // 
-            // tb_the_kp
+            // tb_the_Kp
             // 
-            this.tb_the_kp.Location = new System.Drawing.Point(308, 97);
-            this.tb_the_kp.Name = "tb_the_kp";
-            this.tb_the_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_the_kp.TabIndex = 9;
-            this.tb_the_kp.Tag = "gain";
-            this.tb_the_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox10_KeyDown);
+            this.tb_the_Kp.Location = new System.Drawing.Point(308, 97);
+            this.tb_the_Kp.Name = "tb_the_Kp";
+            this.tb_the_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_the_Kp.TabIndex = 9;
+            this.tb_the_Kp.Tag = "gain";
+            this.tb_the_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox10_KeyDown);
             // 
-            // tb_the_ki
+            // tb_the_Ki
             // 
-            this.tb_the_ki.Location = new System.Drawing.Point(392, 97);
-            this.tb_the_ki.Name = "tb_the_ki";
-            this.tb_the_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_the_ki.TabIndex = 10;
-            this.tb_the_ki.Tag = "gain";
-            this.tb_the_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox11_KeyDown);
+            this.tb_the_Ki.Location = new System.Drawing.Point(392, 97);
+            this.tb_the_Ki.Name = "tb_the_Ki";
+            this.tb_the_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_the_Ki.TabIndex = 10;
+            this.tb_the_Ki.Tag = "gain";
+            this.tb_the_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox11_KeyDown);
             // 
-            // tb_the_kd
+            // tb_the_Kd
             // 
-            this.tb_the_kd.Location = new System.Drawing.Point(476, 97);
-            this.tb_the_kd.Name = "tb_the_kd";
-            this.tb_the_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_the_kd.TabIndex = 11;
-            this.tb_the_kd.Tag = "gain";
-            this.tb_the_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox12_KeyDown);
+            this.tb_the_Kd.Location = new System.Drawing.Point(476, 97);
+            this.tb_the_Kd.Name = "tb_the_Kd";
+            this.tb_the_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_the_Kd.TabIndex = 11;
+            this.tb_the_Kd.Tag = "gain";
+            this.tb_the_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox12_KeyDown);
             // 
-            // tb_wz_kp
+            // tb_wz_Kp
             // 
-            this.tb_wz_kp.Location = new System.Drawing.Point(56, 124);
-            this.tb_wz_kp.Name = "tb_wz_kp";
-            this.tb_wz_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_wz_kp.TabIndex = 12;
-            this.tb_wz_kp.Tag = "gain";
-            this.tb_wz_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox13_KeyDown);
+            this.tb_wz_Kp.Location = new System.Drawing.Point(56, 124);
+            this.tb_wz_Kp.Name = "tb_wz_Kp";
+            this.tb_wz_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_wz_Kp.TabIndex = 12;
+            this.tb_wz_Kp.Tag = "gain";
+            this.tb_wz_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox13_KeyDown);
             // 
-            // tb_wz_ki
+            // tb_wz_Ki
             // 
-            this.tb_wz_ki.Location = new System.Drawing.Point(140, 124);
-            this.tb_wz_ki.Name = "tb_wz_ki";
-            this.tb_wz_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_wz_ki.TabIndex = 13;
-            this.tb_wz_ki.Tag = "gain";
-            this.tb_wz_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox14_KeyDown);
+            this.tb_wz_Ki.Location = new System.Drawing.Point(140, 124);
+            this.tb_wz_Ki.Name = "tb_wz_Ki";
+            this.tb_wz_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_wz_Ki.TabIndex = 13;
+            this.tb_wz_Ki.Tag = "gain";
+            this.tb_wz_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox14_KeyDown);
             // 
-            // tb_wz_kd
+            // tb_wz_Kd
             // 
-            this.tb_wz_kd.Location = new System.Drawing.Point(224, 124);
-            this.tb_wz_kd.Name = "tb_wz_kd";
-            this.tb_wz_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_wz_kd.TabIndex = 14;
-            this.tb_wz_kd.Tag = "gain";
-            this.tb_wz_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox15_KeyDown);
+            this.tb_wz_Kd.Location = new System.Drawing.Point(224, 124);
+            this.tb_wz_Kd.Name = "tb_wz_Kd";
+            this.tb_wz_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_wz_Kd.TabIndex = 14;
+            this.tb_wz_Kd.Tag = "gain";
+            this.tb_wz_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox15_KeyDown);
             // 
-            // tb_shi_kp
+            // tb_shi_Kp
             // 
-            this.tb_shi_kp.Location = new System.Drawing.Point(308, 124);
-            this.tb_shi_kp.Name = "tb_shi_kp";
-            this.tb_shi_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_shi_kp.TabIndex = 15;
-            this.tb_shi_kp.Tag = "gain";
-            this.tb_shi_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox16_KeyDown);
+            this.tb_shi_Kp.Location = new System.Drawing.Point(308, 124);
+            this.tb_shi_Kp.Name = "tb_shi_Kp";
+            this.tb_shi_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_shi_Kp.TabIndex = 15;
+            this.tb_shi_Kp.Tag = "gain";
+            this.tb_shi_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox16_KeyDown);
             // 
-            // tb_shi_ki
+            // tb_shi_Ki
             // 
-            this.tb_shi_ki.Location = new System.Drawing.Point(392, 124);
-            this.tb_shi_ki.Name = "tb_shi_ki";
-            this.tb_shi_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_shi_ki.TabIndex = 16;
-            this.tb_shi_ki.Tag = "gain";
-            this.tb_shi_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox17_KeyDown);
+            this.tb_shi_Ki.Location = new System.Drawing.Point(392, 124);
+            this.tb_shi_Ki.Name = "tb_shi_Ki";
+            this.tb_shi_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_shi_Ki.TabIndex = 16;
+            this.tb_shi_Ki.Tag = "gain";
+            this.tb_shi_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox17_KeyDown);
             // 
-            // tb_shi_kd
+            // tb_shi_Kd
             // 
-            this.tb_shi_kd.Location = new System.Drawing.Point(476, 124);
-            this.tb_shi_kd.Name = "tb_shi_kd";
-            this.tb_shi_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_shi_kd.TabIndex = 17;
-            this.tb_shi_kd.Tag = "gain";
-            this.tb_shi_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox18_KeyDown);
+            this.tb_shi_Kd.Location = new System.Drawing.Point(476, 124);
+            this.tb_shi_Kd.Name = "tb_shi_Kd";
+            this.tb_shi_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_shi_Kd.TabIndex = 17;
+            this.tb_shi_Kd.Tag = "gain";
+            this.tb_shi_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox18_KeyDown);
             // 
-            // tb_vz_kp
+            // tb_vz_Kp
             // 
-            this.tb_vz_kp.Location = new System.Drawing.Point(56, 151);
-            this.tb_vz_kp.Name = "tb_vz_kp";
-            this.tb_vz_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_vz_kp.TabIndex = 18;
-            this.tb_vz_kp.Tag = "gain";
-            this.tb_vz_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox19_KeyDown);
+            this.tb_vz_Kp.Location = new System.Drawing.Point(56, 151);
+            this.tb_vz_Kp.Name = "tb_vz_Kp";
+            this.tb_vz_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_vz_Kp.TabIndex = 18;
+            this.tb_vz_Kp.Tag = "gain";
+            this.tb_vz_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox19_KeyDown);
             // 
-            // tb_vz_ki
+            // tb_vz_Ki
             // 
-            this.tb_vz_ki.Location = new System.Drawing.Point(140, 151);
-            this.tb_vz_ki.Name = "tb_vz_ki";
-            this.tb_vz_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_vz_ki.TabIndex = 19;
-            this.tb_vz_ki.Tag = "gain";
-            this.tb_vz_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox20_KeyDown);
+            this.tb_vz_Ki.Location = new System.Drawing.Point(140, 151);
+            this.tb_vz_Ki.Name = "tb_vz_Ki";
+            this.tb_vz_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_vz_Ki.TabIndex = 19;
+            this.tb_vz_Ki.Tag = "gain";
+            this.tb_vz_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox20_KeyDown);
             // 
-            // tb_vz_kd
+            // tb_vz_Kd
             // 
-            this.tb_vz_kd.Location = new System.Drawing.Point(224, 151);
-            this.tb_vz_kd.Name = "tb_vz_kd";
-            this.tb_vz_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_vz_kd.TabIndex = 20;
-            this.tb_vz_kd.Tag = "gain";
-            this.tb_vz_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox21_KeyDown);
+            this.tb_vz_Kd.Location = new System.Drawing.Point(224, 151);
+            this.tb_vz_Kd.Name = "tb_vz_Kd";
+            this.tb_vz_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_vz_Kd.TabIndex = 20;
+            this.tb_vz_Kd.Tag = "gain";
+            this.tb_vz_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox21_KeyDown);
             // 
-            // tb_alt_kp
+            // tb_alt_Kp
             // 
-            this.tb_alt_kp.Location = new System.Drawing.Point(308, 151);
-            this.tb_alt_kp.Name = "tb_alt_kp";
-            this.tb_alt_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_alt_kp.TabIndex = 21;
-            this.tb_alt_kp.Tag = "gain";
-            this.tb_alt_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox22_KeyDown);
+            this.tb_alt_Kp.Location = new System.Drawing.Point(308, 151);
+            this.tb_alt_Kp.Name = "tb_alt_Kp";
+            this.tb_alt_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_alt_Kp.TabIndex = 21;
+            this.tb_alt_Kp.Tag = "gain";
+            this.tb_alt_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox22_KeyDown);
             // 
-            // tb_alt_ki
+            // tb_alt_Ki
             // 
-            this.tb_alt_ki.Location = new System.Drawing.Point(392, 151);
-            this.tb_alt_ki.Name = "tb_alt_ki";
-            this.tb_alt_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_alt_ki.TabIndex = 22;
-            this.tb_alt_ki.Tag = "gain";
-            this.tb_alt_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox23_KeyDown);
+            this.tb_alt_Ki.Location = new System.Drawing.Point(392, 151);
+            this.tb_alt_Ki.Name = "tb_alt_Ki";
+            this.tb_alt_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_alt_Ki.TabIndex = 22;
+            this.tb_alt_Ki.Tag = "gain";
+            this.tb_alt_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox23_KeyDown);
             // 
-            // tb_alt_kd
+            // tb_alt_Kd
             // 
-            this.tb_alt_kd.Location = new System.Drawing.Point(476, 151);
-            this.tb_alt_kd.Name = "tb_alt_kd";
-            this.tb_alt_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_alt_kd.TabIndex = 23;
-            this.tb_alt_kd.Tag = "gain";
-            this.tb_alt_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox24_KeyDown);
+            this.tb_alt_Kd.Location = new System.Drawing.Point(476, 151);
+            this.tb_alt_Kd.Name = "tb_alt_Kd";
+            this.tb_alt_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_alt_Kd.TabIndex = 23;
+            this.tb_alt_Kd.Tag = "gain";
+            this.tb_alt_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox24_KeyDown);
             // 
-            // tb_vx_kp
+            // tb_vx_Kp
             // 
-            this.tb_vx_kp.Location = new System.Drawing.Point(56, 177);
-            this.tb_vx_kp.Name = "tb_vx_kp";
-            this.tb_vx_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_vx_kp.TabIndex = 24;
-            this.tb_vx_kp.Tag = "gain";
-            this.tb_vx_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox25_KeyDown);
+            this.tb_vx_Kp.Location = new System.Drawing.Point(56, 177);
+            this.tb_vx_Kp.Name = "tb_vx_Kp";
+            this.tb_vx_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_vx_Kp.TabIndex = 24;
+            this.tb_vx_Kp.Tag = "gain";
+            this.tb_vx_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox25_KeyDown);
             // 
-            // tb_vx_ki
+            // tb_vx_Ki
             // 
-            this.tb_vx_ki.Location = new System.Drawing.Point(140, 177);
-            this.tb_vx_ki.Name = "tb_vx_ki";
-            this.tb_vx_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_vx_ki.TabIndex = 25;
-            this.tb_vx_ki.Tag = "gain";
-            this.tb_vx_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox26_KeyDown);
+            this.tb_vx_Ki.Location = new System.Drawing.Point(140, 177);
+            this.tb_vx_Ki.Name = "tb_vx_Ki";
+            this.tb_vx_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_vx_Ki.TabIndex = 25;
+            this.tb_vx_Ki.Tag = "gain";
+            this.tb_vx_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox26_KeyDown);
             // 
-            // tb_vx_kd
+            // tb_vx_Kd
             // 
-            this.tb_vx_kd.Location = new System.Drawing.Point(224, 177);
-            this.tb_vx_kd.Name = "tb_vx_kd";
-            this.tb_vx_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_vx_kd.TabIndex = 26;
-            this.tb_vx_kd.Tag = "gain";
-            this.tb_vx_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox27_KeyDown);
+            this.tb_vx_Kd.Location = new System.Drawing.Point(224, 177);
+            this.tb_vx_Kd.Name = "tb_vx_Kd";
+            this.tb_vx_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_vx_Kd.TabIndex = 26;
+            this.tb_vx_Kd.Tag = "gain";
+            this.tb_vx_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox27_KeyDown);
             // 
-            // tb_vy_kp
+            // tb_vy_Kp
             // 
-            this.tb_vy_kp.Location = new System.Drawing.Point(308, 177);
-            this.tb_vy_kp.Name = "tb_vy_kp";
-            this.tb_vy_kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_vy_kp.TabIndex = 27;
-            this.tb_vy_kp.Tag = "gain";
-            this.tb_vy_kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox28_KeyDown);
+            this.tb_vy_Kp.Location = new System.Drawing.Point(308, 177);
+            this.tb_vy_Kp.Name = "tb_vy_Kp";
+            this.tb_vy_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_vy_Kp.TabIndex = 27;
+            this.tb_vy_Kp.Tag = "gain";
+            this.tb_vy_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox28_KeyDown);
             // 
-            // tb_vy_ki
+            // tb_vy_Ki
             // 
-            this.tb_vy_ki.Location = new System.Drawing.Point(392, 177);
-            this.tb_vy_ki.Name = "tb_vy_ki";
-            this.tb_vy_ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_vy_ki.TabIndex = 28;
-            this.tb_vy_ki.Tag = "gain";
-            this.tb_vy_ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox29_KeyDown);
+            this.tb_vy_Ki.Location = new System.Drawing.Point(392, 177);
+            this.tb_vy_Ki.Name = "tb_vy_Ki";
+            this.tb_vy_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_vy_Ki.TabIndex = 28;
+            this.tb_vy_Ki.Tag = "gain";
+            this.tb_vy_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox29_KeyDown);
             // 
-            // tb_vy_kd
+            // tb_vy_Kd
             // 
-            this.tb_vy_kd.Location = new System.Drawing.Point(476, 177);
-            this.tb_vy_kd.Name = "tb_vy_kd";
-            this.tb_vy_kd.Size = new System.Drawing.Size(78, 20);
-            this.tb_vy_kd.TabIndex = 29;
-            this.tb_vy_kd.Tag = "gain";
-            this.tb_vy_kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox30_KeyDown);
+            this.tb_vy_Kd.Location = new System.Drawing.Point(476, 177);
+            this.tb_vy_Kd.Name = "tb_vy_Kd";
+            this.tb_vy_Kd.Size = new System.Drawing.Size(78, 20);
+            this.tb_vy_Kd.TabIndex = 29;
+            this.tb_vy_Kd.Tag = "gain";
+            this.tb_vy_Kd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox30_KeyDown);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(119, 228);
+            this.button1.Location = new System.Drawing.Point(133, 254);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 30);
             this.button1.TabIndex = 36;
@@ -557,69 +557,146 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.tb_shi_kp);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.tb_shi_Kp);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.tb_wx_kp);
+            this.groupBox1.Controls.Add(this.tb_wx_Kp);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.tb_wx_ki);
+            this.groupBox1.Controls.Add(this.tb_wx_Ki);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.tb_wx_kd);
+            this.groupBox1.Controls.Add(this.tb_wx_Kd);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.tb_phi_kp);
+            this.groupBox1.Controls.Add(this.tb_phi_Kp);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.tb_phi_ki);
+            this.groupBox1.Controls.Add(this.tb_phi_Ki);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.tb_phi_kd);
+            this.groupBox1.Controls.Add(this.tb_phi_Kd);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.tb_wy_kp);
+            this.groupBox1.Controls.Add(this.tb_wy_Kp);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.tb_wy_ki);
+            this.groupBox1.Controls.Add(this.tb_wy_Ki);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.tb_wy_kd);
+            this.groupBox1.Controls.Add(this.tb_wy_Kd);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.tb_the_kp);
+            this.groupBox1.Controls.Add(this.tb_the_Kp);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.tb_the_ki);
+            this.groupBox1.Controls.Add(this.tb_the_Ki);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.tb_the_kd);
+            this.groupBox1.Controls.Add(this.tb_the_Kd);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.tb_wz_kp);
+            this.groupBox1.Controls.Add(this.tb_wz_Kp);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.tb_wz_ki);
-            this.groupBox1.Controls.Add(this.tb_wz_kd);
-            this.groupBox1.Controls.Add(this.tb_vy_kd);
-            this.groupBox1.Controls.Add(this.tb_shi_ki);
-            this.groupBox1.Controls.Add(this.tb_vy_ki);
-            this.groupBox1.Controls.Add(this.tb_shi_kd);
-            this.groupBox1.Controls.Add(this.tb_vy_kp);
-            this.groupBox1.Controls.Add(this.tb_vz_kp);
-            this.groupBox1.Controls.Add(this.tb_vx_kd);
-            this.groupBox1.Controls.Add(this.tb_vz_ki);
-            this.groupBox1.Controls.Add(this.tb_vx_ki);
-            this.groupBox1.Controls.Add(this.tb_vz_kd);
-            this.groupBox1.Controls.Add(this.tb_vx_kp);
-            this.groupBox1.Controls.Add(this.tb_alt_kp);
-            this.groupBox1.Controls.Add(this.tb_alt_kd);
-            this.groupBox1.Controls.Add(this.tb_alt_ki);
+            this.groupBox1.Controls.Add(this.tb_wz_Ki);
+            this.groupBox1.Controls.Add(this.tb_wz_Kd);
+            this.groupBox1.Controls.Add(this.tb_vy_Kd);
+            this.groupBox1.Controls.Add(this.tb_shi_Ki);
+            this.groupBox1.Controls.Add(this.tb_vy_Ki);
+            this.groupBox1.Controls.Add(this.tb_shi_Kd);
+            this.groupBox1.Controls.Add(this.tb_vy_Kp);
+            this.groupBox1.Controls.Add(this.tb_vz_Kp);
+            this.groupBox1.Controls.Add(this.tb_vx_Kd);
+            this.groupBox1.Controls.Add(this.tb_vz_Ki);
+            this.groupBox1.Controls.Add(this.tb_vx_Ki);
+            this.groupBox1.Controls.Add(this.tb_vz_Kd);
+            this.groupBox1.Controls.Add(this.tb_vx_Kp);
+            this.groupBox1.Controls.Add(this.tb_alt_Kp);
+            this.groupBox1.Controls.Add(this.tb_alt_Kd);
+            this.groupBox1.Controls.Add(this.tb_alt_Ki);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(825, 310);
+            this.groupBox1.Size = new System.Drawing.Size(825, 236);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gains";
             // 
-            // button4
+            // groupBox5
             // 
-            this.button4.Location = new System.Drawing.Point(376, 228);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 30);
-            this.button4.TabIndex = 54;
-            this.button4.Text = "Update Gains";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.btnUpdateAll_Click);
+            this.groupBox5.Controls.Add(this.label37);
+            this.groupBox5.Controls.Add(this.label36);
+            this.groupBox5.Controls.Add(this.label35);
+            this.groupBox5.Controls.Add(this.label32);
+            this.groupBox5.Controls.Add(this.tb_sx_Kp);
+            this.groupBox5.Controls.Add(this.tb_sy_Ki);
+            this.groupBox5.Controls.Add(this.tb_sx_Ki);
+            this.groupBox5.Controls.Add(this.tb_sy_Kp);
+            this.groupBox5.Location = new System.Drawing.Point(575, 125);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(244, 100);
+            this.groupBox5.TabIndex = 62;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Position Gains";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(20, 71);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(17, 13);
+            this.label37.TabIndex = 61;
+            this.label37.Text = "sy";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(20, 48);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(17, 13);
+            this.label36.TabIndex = 60;
+            this.label36.Text = "sx";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(152, 29);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(16, 13);
+            this.label35.TabIndex = 59;
+            this.label35.Text = "Ki";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(67, 29);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(20, 13);
+            this.label32.TabIndex = 57;
+            this.label32.Text = "Kp";
+            // 
+            // tb_sx_Kp
+            // 
+            this.tb_sx_Kp.Location = new System.Drawing.Point(42, 45);
+            this.tb_sx_Kp.Name = "tb_sx_Kp";
+            this.tb_sx_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_sx_Kp.TabIndex = 55;
+            this.tb_sx_Kp.Tag = "gain";
+            this.tb_sx_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sx_Kp_KeyDown);
+            // 
+            // tb_sy_Ki
+            // 
+            this.tb_sy_Ki.Location = new System.Drawing.Point(126, 71);
+            this.tb_sy_Ki.Name = "tb_sy_Ki";
+            this.tb_sy_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_sy_Ki.TabIndex = 58;
+            this.tb_sy_Ki.Tag = "gain";
+            this.tb_sy_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sy_Ki_KeyDown);
+            // 
+            // tb_sx_Ki
+            // 
+            this.tb_sx_Ki.Location = new System.Drawing.Point(126, 45);
+            this.tb_sx_Ki.Name = "tb_sx_Ki";
+            this.tb_sx_Ki.Size = new System.Drawing.Size(78, 20);
+            this.tb_sx_Ki.TabIndex = 56;
+            this.tb_sx_Ki.Tag = "gain";
+            this.tb_sx_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sx_Ki_KeyDown);
+            // 
+            // tb_sy_Kp
+            // 
+            this.tb_sy_Kp.Location = new System.Drawing.Point(42, 71);
+            this.tb_sy_Kp.Name = "tb_sy_Kp";
+            this.tb_sy_Kp.Size = new System.Drawing.Size(78, 20);
+            this.tb_sy_Kp.TabIndex = 57;
+            this.tb_sy_Kp.Tag = "gain";
+            this.tb_sy_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sy_Kp_KeyDown);
             // 
             // groupBox4
             // 
@@ -670,6 +747,16 @@
             this.tb_sxkf.Tag = "gain";
             this.tb_sxkf.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sxkf_KeyDown);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(404, 254);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(120, 30);
+            this.button4.TabIndex = 54;
+            this.button4.Text = "Update Gains";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnUpdateAll_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button3);
@@ -685,7 +772,7 @@
             this.groupBox2.Controls.Add(this.textBox33);
             this.groupBox2.Controls.Add(this.textBox32);
             this.groupBox2.Controls.Add(this.textBox31);
-            this.groupBox2.Location = new System.Drawing.Point(499, 326);
+            this.groupBox2.Location = new System.Drawing.Point(517, 298);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(274, 151);
             this.groupBox2.TabIndex = 53;
@@ -806,7 +893,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label28);
@@ -831,16 +917,16 @@
             this.groupBox3.Controls.Add(this.tb_vh_thmin);
             this.groupBox3.Controls.Add(this.tb_vh_thmax);
             this.groupBox3.Controls.Add(this.tb_vh_thhv);
-            this.groupBox3.Location = new System.Drawing.Point(12, 328);
+            this.groupBox3.Location = new System.Drawing.Point(12, 292);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(377, 239);
+            this.groupBox3.Size = new System.Drawing.Size(377, 198);
             this.groupBox3.TabIndex = 54;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Limits";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(133, 196);
+            this.button5.Location = new System.Drawing.Point(145, 496);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 37);
             this.button5.TabIndex = 55;
@@ -1076,152 +1162,66 @@
             this.tb_vh_thhv.Tag = "limit";
             this.tb_vh_thhv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox37_KeyDown);
             // 
-            // tb_sy_Ki
-            // 
-            this.tb_sy_Ki.Location = new System.Drawing.Point(126, 71);
-            this.tb_sy_Ki.Name = "tb_sy_Ki";
-            this.tb_sy_Ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_sy_Ki.TabIndex = 58;
-            this.tb_sy_Ki.Tag = "gain";
-            this.tb_sy_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sy_Ki_KeyDown);
-            // 
-            // tb_sy_Kp
-            // 
-            this.tb_sy_Kp.Location = new System.Drawing.Point(42, 71);
-            this.tb_sy_Kp.Name = "tb_sy_Kp";
-            this.tb_sy_Kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_sy_Kp.TabIndex = 57;
-            this.tb_sy_Kp.Tag = "gain";
-            this.tb_sy_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sy_Kp_KeyDown);
-            // 
-            // tb_sx_Ki
-            // 
-            this.tb_sx_Ki.Location = new System.Drawing.Point(126, 45);
-            this.tb_sx_Ki.Name = "tb_sx_Ki";
-            this.tb_sx_Ki.Size = new System.Drawing.Size(78, 20);
-            this.tb_sx_Ki.TabIndex = 56;
-            this.tb_sx_Ki.Tag = "gain";
-            this.tb_sx_Ki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sx_Ki_KeyDown);
-            // 
-            // tb_sx_Kp
-            // 
-            this.tb_sx_Kp.Location = new System.Drawing.Point(42, 45);
-            this.tb_sx_Kp.Name = "tb_sx_Kp";
-            this.tb_sx_Kp.Size = new System.Drawing.Size(78, 20);
-            this.tb_sx_Kp.TabIndex = 55;
-            this.tb_sx_Kp.Tag = "gain";
-            this.tb_sx_Kp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sx_Kp_KeyDown);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label37);
-            this.groupBox5.Controls.Add(this.label36);
-            this.groupBox5.Controls.Add(this.label35);
-            this.groupBox5.Controls.Add(this.label32);
-            this.groupBox5.Controls.Add(this.tb_sx_Kp);
-            this.groupBox5.Controls.Add(this.tb_sy_Ki);
-            this.groupBox5.Controls.Add(this.tb_sx_Ki);
-            this.groupBox5.Controls.Add(this.tb_sy_Kp);
-            this.groupBox5.Location = new System.Drawing.Point(575, 125);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(244, 100);
-            this.groupBox5.TabIndex = 62;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Position Gains";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(67, 29);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(20, 13);
-            this.label32.TabIndex = 57;
-            this.label32.Text = "Kp";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(152, 29);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(16, 13);
-            this.label35.TabIndex = 59;
-            this.label35.Text = "Ki";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(20, 48);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(17, 13);
-            this.label36.TabIndex = 60;
-            this.label36.Text = "sx";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(20, 71);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(17, 13);
-            this.label37.TabIndex = 61;
-            this.label37.Text = "sy";
-            // 
             // ParamMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 613);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ParamMenu";
             this.Text = "Parameter Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ParamMenu_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox tb_wx_kp;
-        private System.Windows.Forms.TextBox tb_wx_ki;
-        private System.Windows.Forms.TextBox tb_wx_kd;
-        private System.Windows.Forms.TextBox tb_phi_kp;
-        private System.Windows.Forms.TextBox tb_phi_ki;
-        private System.Windows.Forms.TextBox tb_phi_kd;
-        private System.Windows.Forms.TextBox tb_wy_kp;
-        private System.Windows.Forms.TextBox tb_wy_ki;
-        private System.Windows.Forms.TextBox tb_wy_kd;
-        private System.Windows.Forms.TextBox tb_the_kp;
-        private System.Windows.Forms.TextBox tb_the_ki;
-        private System.Windows.Forms.TextBox tb_the_kd;
-        private System.Windows.Forms.TextBox tb_wz_kp;
-        private System.Windows.Forms.TextBox tb_wz_ki;
-        private System.Windows.Forms.TextBox tb_wz_kd;
-        private System.Windows.Forms.TextBox tb_shi_kp;
-        private System.Windows.Forms.TextBox tb_shi_ki;
-        private System.Windows.Forms.TextBox tb_shi_kd;
-        private System.Windows.Forms.TextBox tb_vz_kp;
-        private System.Windows.Forms.TextBox tb_vz_ki;
-        private System.Windows.Forms.TextBox tb_vz_kd;
-        private System.Windows.Forms.TextBox tb_alt_kp;
-        private System.Windows.Forms.TextBox tb_alt_ki;
-        private System.Windows.Forms.TextBox tb_alt_kd;
-        private System.Windows.Forms.TextBox tb_vx_kp;
-        private System.Windows.Forms.TextBox tb_vx_ki;
-        private System.Windows.Forms.TextBox tb_vx_kd;
-        private System.Windows.Forms.TextBox tb_vy_kp;
-        private System.Windows.Forms.TextBox tb_vy_ki;
-        private System.Windows.Forms.TextBox tb_vy_kd;
+        private System.Windows.Forms.TextBox tb_wx_Kp;
+        private System.Windows.Forms.TextBox tb_wx_Ki;
+        private System.Windows.Forms.TextBox tb_wx_Kd;
+        private System.Windows.Forms.TextBox tb_phi_Kp;
+        private System.Windows.Forms.TextBox tb_phi_Ki;
+        private System.Windows.Forms.TextBox tb_phi_Kd;
+        private System.Windows.Forms.TextBox tb_wy_Kp;
+        private System.Windows.Forms.TextBox tb_wy_Ki;
+        private System.Windows.Forms.TextBox tb_wy_Kd;
+        private System.Windows.Forms.TextBox tb_the_Kp;
+        private System.Windows.Forms.TextBox tb_the_Ki;
+        private System.Windows.Forms.TextBox tb_the_Kd;
+        private System.Windows.Forms.TextBox tb_wz_Kp;
+        private System.Windows.Forms.TextBox tb_wz_Ki;
+        private System.Windows.Forms.TextBox tb_wz_Kd;
+        private System.Windows.Forms.TextBox tb_shi_Kp;
+        private System.Windows.Forms.TextBox tb_shi_Ki;
+        private System.Windows.Forms.TextBox tb_shi_Kd;
+        private System.Windows.Forms.TextBox tb_vz_Kp;
+        private System.Windows.Forms.TextBox tb_vz_Ki;
+        private System.Windows.Forms.TextBox tb_vz_Kd;
+        private System.Windows.Forms.TextBox tb_alt_Kp;
+        private System.Windows.Forms.TextBox tb_alt_Ki;
+        private System.Windows.Forms.TextBox tb_alt_Kd;
+        private System.Windows.Forms.TextBox tb_vx_Kp;
+        private System.Windows.Forms.TextBox tb_vx_Ki;
+        private System.Windows.Forms.TextBox tb_vx_Kd;
+        private System.Windows.Forms.TextBox tb_vy_Kp;
+        private System.Windows.Forms.TextBox tb_vy_Ki;
+        private System.Windows.Forms.TextBox tb_vy_Kd;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

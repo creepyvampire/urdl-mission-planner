@@ -11,12 +11,12 @@ namespace MissionPlanner.GCSViews
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlightData));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cb_shi_cmd = new System.Windows.Forms.CheckBox();
+            this.cb_shi = new System.Windows.Forms.CheckBox();
+            this.cb_theta_cmd = new System.Windows.Forms.CheckBox();
+            this.cb_theta = new System.Windows.Forms.CheckBox();
+            this.cb_phi_cmd = new System.Windows.Forms.CheckBox();
+            this.cb_phi = new System.Windows.Forms.CheckBox();
             this.zg1 = new ZedGraph.ZedGraphControl();
             this.contextMenuStripMap = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.goHereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,13 +81,12 @@ namespace MissionPlanner.GCSViews
             this.tabControlactions = new System.Windows.Forms.TabControl();
             this.tabQuick = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.but_set_failsafe = new System.Windows.Forms.Button();
+            this.cb_comm_loss = new System.Windows.Forms.CheckBox();
+            this.cb_gps_loss = new System.Windows.Forms.CheckBox();
+            this.cb_rc_loss = new System.Windows.Forms.CheckBox();
+            this.cb_crit_batt = new System.Windows.Forms.CheckBox();
+            this.cb_low_batt = new System.Windows.Forms.CheckBox();
             this.button10 = new System.Windows.Forms.Button();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -262,6 +261,8 @@ namespace MissionPlanner.GCSViews
             this.coords1 = new MissionPlanner.Controls.Coords();
             this.CHK_autopan = new System.Windows.Forms.CheckBox();
             this.CB_tuning = new System.Windows.Forms.CheckBox();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStripQuickView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.setViewCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -340,12 +341,12 @@ namespace MissionPlanner.GCSViews
             // splitContainer1.Panel1
             // 
             resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox6);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox5);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox4);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox3);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.cb_shi_cmd);
+            this.splitContainer1.Panel1.Controls.Add(this.cb_shi);
+            this.splitContainer1.Panel1.Controls.Add(this.cb_theta_cmd);
+            this.splitContainer1.Panel1.Controls.Add(this.cb_theta);
+            this.splitContainer1.Panel1.Controls.Add(this.cb_phi_cmd);
+            this.splitContainer1.Panel1.Controls.Add(this.cb_phi);
             this.splitContainer1.Panel1.Controls.Add(this.zg1);
             // 
             // splitContainer1.Panel2
@@ -366,45 +367,45 @@ namespace MissionPlanner.GCSViews
             this.splitContainer1.Panel2.Controls.Add(this.gMapControl1);
             this.splitContainer1.Panel2.Resize += new System.EventHandler(this.splitContainer1_Panel2_Resize);
             // 
-            // checkBox6
+            // cb_shi_cmd
             // 
-            resources.ApplyResources(this.checkBox6, "checkBox6");
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_shi_cmd, "cb_shi_cmd");
+            this.cb_shi_cmd.Name = "cb_shi_cmd";
+            this.cb_shi_cmd.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // cb_shi
             // 
-            resources.ApplyResources(this.checkBox5, "checkBox5");
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            resources.ApplyResources(this.cb_shi, "cb_shi");
+            this.cb_shi.Name = "cb_shi";
+            this.cb_shi.UseVisualStyleBackColor = true;
+            this.cb_shi.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
-            // checkBox4
+            // cb_theta_cmd
             // 
-            resources.ApplyResources(this.checkBox4, "checkBox4");
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_theta_cmd, "cb_theta_cmd");
+            this.cb_theta_cmd.Name = "cb_theta_cmd";
+            this.cb_theta_cmd.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cb_theta
             // 
-            resources.ApplyResources(this.checkBox3, "checkBox3");
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            resources.ApplyResources(this.cb_theta, "cb_theta");
+            this.cb_theta.Name = "cb_theta";
+            this.cb_theta.UseVisualStyleBackColor = true;
+            this.cb_theta.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox2
+            // cb_phi_cmd
             // 
-            resources.ApplyResources(this.checkBox2, "checkBox2");
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            resources.ApplyResources(this.cb_phi_cmd, "cb_phi_cmd");
+            this.cb_phi_cmd.Name = "cb_phi_cmd";
+            this.cb_phi_cmd.UseVisualStyleBackColor = true;
+            this.cb_phi_cmd.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // checkBox1
+            // cb_phi
             // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            resources.ApplyResources(this.cb_phi, "cb_phi");
+            this.cb_phi.Name = "cb_phi";
+            this.cb_phi.UseVisualStyleBackColor = true;
+            this.cb_phi.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // zg1
             // 
@@ -651,7 +652,7 @@ namespace MissionPlanner.GCSViews
             this.windDir1.BackColor = System.Drawing.Color.Transparent;
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Direction", this.bindingSource1, "wind_dir", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Speed", this.bindingSource1, "wind_vel", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.windDir1.Direction = 180D;
+            this.windDir1.Direction = 360D;
             resources.ApplyResources(this.windDir1, "windDir1");
             this.windDir1.Name = "windDir1";
             this.windDir1.Speed = 0D;
@@ -1078,68 +1079,51 @@ namespace MissionPlanner.GCSViews
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button13);
-            this.groupBox1.Controls.Add(this.button12);
-            this.groupBox1.Controls.Add(this.button11);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.but_set_failsafe);
+            this.groupBox1.Controls.Add(this.cb_comm_loss);
+            this.groupBox1.Controls.Add(this.cb_gps_loss);
+            this.groupBox1.Controls.Add(this.cb_rc_loss);
+            this.groupBox1.Controls.Add(this.cb_crit_batt);
+            this.groupBox1.Controls.Add(this.cb_low_batt);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // button13
+            // but_set_failsafe
             // 
-            resources.ApplyResources(this.button13, "button13");
-            this.button13.ImageList = this.imageList2;
-            this.button13.Name = "button13";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            resources.ApplyResources(this.but_set_failsafe, "but_set_failsafe");
+            this.but_set_failsafe.Name = "but_set_failsafe";
+            this.but_set_failsafe.UseVisualStyleBackColor = true;
             // 
-            // imageList2
+            // cb_comm_loss
             // 
-            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList2.Images.SetKeyName(0, "play-button.png");
-            this.imageList2.Images.SetKeyName(1, "siren.png");
+            resources.ApplyResources(this.cb_comm_loss, "cb_comm_loss");
+            this.cb_comm_loss.Name = "cb_comm_loss";
+            this.cb_comm_loss.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // cb_gps_loss
             // 
-            resources.ApplyResources(this.button12, "button12");
-            this.button12.ImageList = this.imageList2;
-            this.button12.Name = "button12";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            resources.ApplyResources(this.cb_gps_loss, "cb_gps_loss");
+            this.cb_gps_loss.Name = "cb_gps_loss";
+            this.cb_gps_loss.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // cb_rc_loss
             // 
-            resources.ApplyResources(this.button11, "button11");
-            this.button11.ImageList = this.imageList2;
-            this.button11.Name = "button11";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            resources.ApplyResources(this.cb_rc_loss, "cb_rc_loss");
+            this.cb_rc_loss.Name = "cb_rc_loss";
+            this.cb_rc_loss.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // cb_crit_batt
             // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.ImageList = this.imageList2;
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            resources.ApplyResources(this.cb_crit_batt, "cb_crit_batt");
+            this.cb_crit_batt.Name = "cb_crit_batt";
+            this.cb_crit_batt.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // cb_low_batt
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.ImageList = this.imageList1;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "play-button.png");
-            this.imageList1.Images.SetKeyName(1, "siren.png");
+            resources.ApplyResources(this.cb_low_batt, "cb_low_batt");
+            this.cb_low_batt.Name = "cb_low_batt";
+            this.cb_low_batt.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
@@ -3092,6 +3076,20 @@ namespace MissionPlanner.GCSViews
             this.CB_tuning.UseVisualStyleBackColor = true;
             this.CB_tuning.CheckedChanged += new System.EventHandler(this.CB_tuning_CheckedChanged);
             // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "play-button.png");
+            this.imageList2.Images.SetKeyName(1, "siren.png");
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "play-button.png");
+            this.imageList1.Images.SetKeyName(1, "siren.png");
+            // 
             // contextMenuStripQuickView
             // 
             this.contextMenuStripQuickView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -3177,6 +3175,7 @@ namespace MissionPlanner.GCSViews
             this.tabQuick.ResumeLayout(false);
             this.tabQuick.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabHUD.ResumeLayout(false);
@@ -3481,18 +3480,19 @@ namespace MissionPlanner.GCSViews
         private Label label16;
         private Label label17;
         private Label label18;
-        private Button button12;
-        private Button button11;
-        private Button button5;
-        private Button button1;
-        private Button button13;
         private ImageList imageList1;
         private ImageList imageList2;
-        private CheckBox checkBox6;
-        private CheckBox checkBox5;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private CheckBox cb_shi_cmd;
+        private CheckBox cb_shi;
+        private CheckBox cb_theta_cmd;
+        private CheckBox cb_theta;
+        private CheckBox cb_phi_cmd;
+        private CheckBox cb_phi;
+        private CheckBox cb_low_batt;
+        private CheckBox cb_comm_loss;
+        private CheckBox cb_gps_loss;
+        private CheckBox cb_rc_loss;
+        private CheckBox cb_crit_batt;
+        private Button but_set_failsafe;
     }
 }

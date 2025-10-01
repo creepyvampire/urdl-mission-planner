@@ -6882,7 +6882,7 @@ namespace MissionPlanner.GCSViews
         {
             double time = (Environment.TickCount - tickStart) / 1000.0;
 
-            if (checkBox1.Checked)
+            if (cb_phi.Checked)
             {
                 if (attitudeSub == null)
                 {
@@ -6916,7 +6916,7 @@ namespace MissionPlanner.GCSViews
         {
             double time = (Environment.TickCount - tickStart) / 1000.0;
 
-            if (checkBox3.Checked)
+            if (cb_theta.Checked)
             {
                 if (attitudeSub == null)
                 {
@@ -6945,7 +6945,7 @@ namespace MissionPlanner.GCSViews
         {
             double time = (Environment.TickCount - tickStart) / 1000.0;
 
-            if (checkBox5.Checked)
+            if (cb_shi.Checked)
             {
                 if (attitudeSub == null)
                 {
@@ -6969,22 +6969,22 @@ namespace MissionPlanner.GCSViews
                 zg1.GraphPane.CurveList.Remove(yawListCurve);
             }
         }
-        /*
-private void button11_Click(object sender, EventArgs e)
-{
-float p1 = checkBox1.Checked ? 1 : 0;
-float p2 = checkBox2.Checked ? 1 : 0;
-float p3 = checkBox3.Checked ? 1 : 0;
-float p4 = checkBox4.Checked ? 1 : 0;
-float p5 = checkBox5.Checked ? 1 : 0;
-Console.WriteLine($"FAILSAFE CHECKSTATE: {p1} {p2} {p3} {p4} {p5}");
-if (!MainV2.comPort.BaseStream.IsOpen)
-{
-return;
-}
-MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, p1, p2, p3, p4, p5, 0, 0);
-}
-*/
+        
+        private void but_set_failsafe_Click(object sender, EventArgs e)
+        {
+            float p1 = cb_low_batt.Checked ? 1 : 0;
+            float p2 = cb_crit_batt.Checked ? 1 : 0;
+            float p3 = cb_rc_loss.Checked ? 1 : 0;
+            float p4 = cb_gps_loss.Checked ? 1 : 0;
+            float p5 = cb_comm_loss.Checked ? 1 : 0;
+            Console.WriteLine($"FAILSAFE CHECKSTATE: {p1} {p2} {p3} {p4} {p5}");
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, p1, p2, p3, p4, p5, 0, 0);
+        }
+
 
         /*
          * hbSub = MainV2.comPort.SubscribeToPacketType(MAVLink.MAVLINK_MSG_ID.HEARTBEAT, message =>

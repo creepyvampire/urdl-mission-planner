@@ -1389,6 +1389,16 @@ namespace MissionPlanner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap play_button {
+            get {
+                object obj = ResourceManager.GetObject("play-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlusFrames_02 {
             get {
                 object obj = ResourceManager.GetObject("PlusFrames_02", resourceCulture);
@@ -1699,6 +1709,16 @@ namespace MissionPlanner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap siren {
+            get {
+                object obj = ResourceManager.GetObject("siren", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sonar {
             get {
                 object obj = ResourceManager.GetObject("sonar", resourceCulture);
@@ -1762,6 +1782,16 @@ namespace MissionPlanner.Properties {
         internal static System.Drawing.Bitmap urdl_logo {
             get {
                 object obj = ResourceManager.GetObject("urdl_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap urdl_logo_transparent {
+            get {
+                object obj = ResourceManager.GetObject("urdl_logo_transparent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

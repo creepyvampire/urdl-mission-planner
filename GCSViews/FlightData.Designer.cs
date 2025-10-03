@@ -372,6 +372,7 @@ namespace MissionPlanner.GCSViews
             resources.ApplyResources(this.cb_shi_cmd, "cb_shi_cmd");
             this.cb_shi_cmd.Name = "cb_shi_cmd";
             this.cb_shi_cmd.UseVisualStyleBackColor = true;
+            this.cb_shi_cmd.CheckedChanged += new System.EventHandler(this.cb_shi_cmd_CheckedChanged);
             // 
             // cb_shi
             // 
@@ -385,6 +386,7 @@ namespace MissionPlanner.GCSViews
             resources.ApplyResources(this.cb_theta_cmd, "cb_theta_cmd");
             this.cb_theta_cmd.Name = "cb_theta_cmd";
             this.cb_theta_cmd.UseVisualStyleBackColor = true;
+            this.cb_theta_cmd.CheckedChanged += new System.EventHandler(this.cb_theta_cmd_CheckedChanged);
             // 
             // cb_theta
             // 
@@ -398,7 +400,7 @@ namespace MissionPlanner.GCSViews
             resources.ApplyResources(this.cb_phi_cmd, "cb_phi_cmd");
             this.cb_phi_cmd.Name = "cb_phi_cmd";
             this.cb_phi_cmd.UseVisualStyleBackColor = true;
-            this.cb_phi_cmd.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.cb_phi_cmd.CheckedChanged += new System.EventHandler(this.cb_phi_cmd_CheckedChanged);
             // 
             // cb_phi
             // 
@@ -652,7 +654,7 @@ namespace MissionPlanner.GCSViews
             this.windDir1.BackColor = System.Drawing.Color.Transparent;
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Direction", this.bindingSource1, "wind_dir", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Speed", this.bindingSource1, "wind_vel", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.windDir1.Direction = 360D;
+            this.windDir1.Direction = 180D;
             resources.ApplyResources(this.windDir1, "windDir1");
             this.windDir1.Name = "windDir1";
             this.windDir1.Speed = 0D;

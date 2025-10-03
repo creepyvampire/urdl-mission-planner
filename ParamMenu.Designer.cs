@@ -104,7 +104,6 @@
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -129,6 +128,7 @@
             this.tb_vh_thmin = new System.Windows.Forms.TextBox();
             this.tb_vh_thmax = new System.Windows.Forms.TextBox();
             this.tb_vh_thhv = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -924,16 +924,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Limits";
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(145, 496);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 37);
-            this.button5.TabIndex = 55;
-            this.button5.Text = "Update Limits";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.btnUpdateLimits_Click);
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1162,18 +1152,31 @@
             this.tb_vh_thhv.Tag = "limit";
             this.tb_vh_thhv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox37_KeyDown);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(145, 496);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(120, 37);
+            this.button5.TabIndex = 55;
+            this.button5.Text = "Update Limits";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnUpdateLimits_Click);
+            // 
             // ParamMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 613);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(841, 536);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "ParamMenu";
+            this.ShowIcon = false;
             this.Text = "Parameter Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ParamMenu_FormClosing);
             this.groupBox1.ResumeLayout(false);

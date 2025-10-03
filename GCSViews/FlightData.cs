@@ -6876,7 +6876,14 @@ namespace MissionPlanner.GCSViews
         CurveItem pitchListCurve = null;
         RollingPointPairList yawList = new RollingPointPairList(1200);
         CurveItem yawListCurve = null;
+        RollingPointPairList rollCmdList = new RollingPointPairList(1200);
+        CurveItem rollCmdListCurve = null;
+        RollingPointPairList pitchCmdList = new RollingPointPairList(1200);
+        CurveItem pitchCmdListCurve = null;
+        RollingPointPairList yawCmdList = new RollingPointPairList(1200);
+        CurveItem yawCmdListCurve = null;
         private int? attitudeSub = null;
+        private int? navControllerSub = null;
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -6890,9 +6897,9 @@ namespace MissionPlanner.GCSViews
                     {
                         var attitude = (MAVLink.mavlink_attitude_t)message.data;
                         double t = (Environment.TickCount - tickStart) / 1000.0;
-                        rollList.Add(t, attitude.roll);
-                        pitchList.Add(t, attitude.pitch);
-                        yawList.Add(t, attitude.yaw);
+                        rollList.Add(t, (attitude.roll*180)/Math.PI);
+                        pitchList.Add(t, (attitude.pitch * 180) / Math.PI);
+                        yawList.Add(t, (attitude.yaw * 180) / Math.PI);
                         return true;
                     }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
                 }
@@ -6907,11 +6914,6 @@ namespace MissionPlanner.GCSViews
             }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             double time = (Environment.TickCount - tickStart) / 1000.0;
@@ -6924,13 +6926,13 @@ namespace MissionPlanner.GCSViews
                     {
                         var attitude = (MAVLink.mavlink_attitude_t)message.data;
                         double t = (Environment.TickCount - tickStart) / 1000.0;
-                        rollList.Add(t, attitude.roll);
-                        pitchList.Add(t, attitude.pitch);
-                        yawList.Add(t, attitude.yaw);
+                        rollList.Add(t, (attitude.roll * 180) / Math.PI);
+                        pitchList.Add(t, (attitude.pitch * 180) / Math.PI);
+                        yawList.Add(t, (attitude.yaw * 180) / Math.PI);
                         return true;
                     }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
                 }
-                pitchListCurve = zg1.GraphPane.AddCurve("Pitch", pitchList, Color.Yellow);
+                pitchListCurve = zg1.GraphPane.AddCurve("Pitch", pitchList, Color.Green);
                 zg1.AxisChange();
                 zg1.Invalidate();
                 zg1.Refresh();
@@ -6953,13 +6955,13 @@ namespace MissionPlanner.GCSViews
                     {
                         var attitude = (MAVLink.mavlink_attitude_t)message.data;
                         double t = (Environment.TickCount - tickStart) / 1000.0;
-                        rollList.Add(t, attitude.roll);
-                        pitchList.Add(t, attitude.pitch);
-                        yawList.Add(t, attitude.yaw);
+                        rollList.Add(t, (attitude.roll * 180) / Math.PI);
+                        pitchList.Add(t, (attitude.pitch * 180) / Math.PI);
+                        yawList.Add(t, (attitude.yaw * 180) / Math.PI);
                         return true;
                     }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
                 }
-                yawListCurve = zg1.GraphPane.AddCurve("Yaw", yawList, Color.LightBlue);
+                yawListCurve = zg1.GraphPane.AddCurve("Yaw", yawList, Color.Blue);
                 zg1.AxisChange();
                 zg1.Invalidate();
                 zg1.Refresh();
@@ -6983,6 +6985,93 @@ namespace MissionPlanner.GCSViews
                 return;
             }
             MainV2.comPort.doCommand(MAVLink.MAV_CMD.USER_1, p1, p2, p3, p4, p5, 0, 0);
+        }
+
+        private void cb_phi_cmd_CheckedChanged(object sender, EventArgs e)
+        {
+            double time = (Environment.TickCount - tickStart) / 1000.0;
+
+            if (cb_phi_cmd.Checked)
+            {
+                if (navControllerSub == null)
+                {
+                    navControllerSub = MainV2.comPort.SubscribeToPacketType(MAVLink.MAVLINK_MSG_ID.NAV_CONTROLLER_OUTPUT, message =>
+                    {
+                        var navController = (MAVLink.mavlink_nav_controller_output_t)message.data;
+                        double t = (Environment.TickCount - tickStart) / 1000.0;
+                        rollCmdList.Add(t, navController.nav_roll);
+                        pitchCmdList.Add(t, navController.nav_pitch);
+                        yawCmdList.Add(t, navController.nav_bearing);
+                        return true;
+                    }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+                }
+                rollCmdListCurve = zg1.GraphPane.AddCurve("Roll_Cmd", rollCmdList, Color.Cyan);
+                zg1.AxisChange();
+                zg1.Invalidate();
+                zg1.Refresh();
+            }
+            else
+            {
+                zg1.GraphPane.CurveList.Remove(rollCmdListCurve);
+            }
+        }
+
+        private void cb_theta_cmd_CheckedChanged(object sender, EventArgs e)
+        {
+            double time = (Environment.TickCount - tickStart) / 1000.0;
+
+            if (cb_theta_cmd.Checked)
+            {
+                if (navControllerSub == null)
+                {
+                    navControllerSub = MainV2.comPort.SubscribeToPacketType(MAVLink.MAVLINK_MSG_ID.NAV_CONTROLLER_OUTPUT, message =>
+                    {
+                        var navController = (MAVLink.mavlink_nav_controller_output_t)message.data;
+                        double t = (Environment.TickCount - tickStart) / 1000.0;
+                        rollCmdList.Add(t, navController.nav_roll);
+                        pitchCmdList.Add(t, navController.nav_pitch);
+                        yawCmdList.Add(t, navController.nav_bearing);
+                        return true;
+                    }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+                }
+                pitchCmdListCurve = zg1.GraphPane.AddCurve("Pitch_Cmd", pitchCmdList, Color.Magenta);
+                zg1.AxisChange();
+                zg1.Invalidate();
+                zg1.Refresh();
+            }
+            else
+            {
+                zg1.GraphPane.CurveList.Remove(pitchCmdListCurve);
+            }
+        }
+
+        private void cb_shi_cmd_CheckedChanged(object sender, EventArgs e)
+        {
+            double time = (Environment.TickCount - tickStart) / 1000.0;
+
+            if (cb_shi_cmd.Checked)
+            {
+                if (navControllerSub == null)
+                {
+                    navControllerSub = MainV2.comPort.SubscribeToPacketType(MAVLink.MAVLINK_MSG_ID.NAV_CONTROLLER_OUTPUT, message =>
+                    {
+                        var navController = (MAVLink.mavlink_nav_controller_output_t)message.data;
+                        double t = (Environment.TickCount - tickStart) / 1000.0;
+                        rollCmdList.Add(t, navController.nav_roll);
+                        pitchCmdList.Add(t, navController.nav_pitch);
+                        yawCmdList.Add(t, navController.nav_bearing);
+                        return true;
+                    }, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+                }
+                yawCmdListCurve = zg1.GraphPane.AddCurve("Pitch_Cmd", yawCmdList, Color.Yellow);
+                zg1.AxisChange();
+                zg1.Invalidate();
+                zg1.Refresh();
+            }
+            else
+            {
+                zg1.GraphPane.CurveList.Remove(yawCmdListCurve);
+            }
         }
 
 

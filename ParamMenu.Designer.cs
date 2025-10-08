@@ -539,7 +539,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(253, 280);
+            this.label14.Location = new System.Drawing.Point(218, 212);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(0, 13);
             this.label14.TabIndex = 51;
@@ -556,10 +556,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.tb_shi_Kp);
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.tb_wx_Kp);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.tb_wx_Ki);

@@ -9,7 +9,7 @@ using Android.App;
 [assembly: AssemblyTitle("Xamarin.Android")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Michael Oborne")]
+[assembly: AssemblyCompany("URDL")]
 [assembly: AssemblyProduct("Xamarin.Android")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
@@ -31,3 +31,22 @@ using Android.App;
 // Add some common permissions, these can be removed if not needed
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
+
+// To prevent the screen from turning off during a mission
+[assembly: UsesPermission(Android.Manifest.Permission.WakeLock)]
+
+// For accessing the phone's GPS and external GPS data
+[assembly: UsesPermission(Android.Manifest.Permission.AccessFineLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
+
+// For connecting to devices via Bluetooth or Bluetooth LE
+[assembly: UsesPermission(Android.Manifest.Permission.Bluetooth)]
+[assembly: UsesPermission(Android.Manifest.Permission.BluetoothAdmin)]
+[assembly: UsesPermission(Android.Manifest.Permission.BluetoothScan)]
+[assembly: UsesPermission(Android.Manifest.Permission.BluetoothConnect)]
+
+// --- ESSENTIAL FOR USB CONNECTION ---
+
+// This declares that your app can use USB devices (Host Mode/OTG)
+// It corresponds to the <uses-feature> tag in the manifest.
+[assembly: UsesFeature("android.hardware.usb.host")]

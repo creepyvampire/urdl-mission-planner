@@ -2048,6 +2048,7 @@ namespace MissionPlanner
                 return;
             }
             label14.Text = "Updating parameters...";
+            
 
             foreach (Control ctrl in GetAllControls(this))
             {

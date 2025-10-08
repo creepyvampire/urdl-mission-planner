@@ -32,6 +32,7 @@ using ZedGraph;
 using LogAnalyzer = MissionPlanner.Utilities.LogAnalyzer;
 using TableLayoutPanelCellPosition = System.Windows.Forms.TableLayoutPanelCellPosition;
 using UnauthorizedAccessException = System.UnauthorizedAccessException;
+using System.Speech.Synthesis;
 
 // written by michael oborne
 
@@ -7071,6 +7072,49 @@ namespace MissionPlanner.GCSViews
             else
             {
                 zg1.GraphPane.CurveList.Remove(yawCmdListCurve);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            using(Form prompt = new Form())
+    {
+                prompt.Width = 300;
+                prompt.Height = 150;
+                prompt.FormBorderStyle = FormBorderStyle.FixedDialog;
+                prompt.Text = "Security Check";
+                prompt.StartPosition = FormStartPosition.CenterParent;
+                prompt.MaximizeBox = false;
+                prompt.MinimizeBox = false;
+
+                System.Windows.Forms.Label textLabel = new System.Windows.Forms.Label() { Left = 20, Top = 20, Text = "Enter security code:", AutoSize = true };
+                TextBox inputBox = new TextBox() { Left = 20, Top = 50, Width = 240, PasswordChar = '*' };
+                Button okButton = new Button() { Text = "OK", Left = 60, Width = 80, Top = 80, DialogResult = DialogResult.OK };
+                Button cancelButton = new Button() { Text = "Cancel", Left = 150, Width = 80, Top = 80, DialogResult = DialogResult.Cancel };
+
+                prompt.Controls.Add(textLabel);
+                prompt.Controls.Add(inputBox);
+                prompt.Controls.Add(okButton);
+                prompt.Controls.Add(cancelButton);
+                prompt.AcceptButton = okButton;
+                prompt.CancelButton = cancelButton;
+
+                if (prompt.ShowDialog() == DialogResult.OK)
+                {
+                    if (inputBox.Text == "1234")
+                    {
+                        MainV2.comPort.doCommand(MAVLink.MAV_CMD.PAYLOAD_PLACE, 0, 0, 0, 0, 0, 0, 0);
+                        MessageBox.Show("Command sent.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect code.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
         }
 

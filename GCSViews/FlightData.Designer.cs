@@ -273,6 +273,7 @@ namespace MissionPlanner.GCSViews
             this.scriptChecker = new System.Windows.Forms.Timer(this.components);
             this.Messagetabtimer = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceStatusTab = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -654,7 +655,7 @@ namespace MissionPlanner.GCSViews
             this.windDir1.BackColor = System.Drawing.Color.Transparent;
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Direction", this.bindingSource1, "wind_dir", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Speed", this.bindingSource1, "wind_vel", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.windDir1.Direction = 180D;
+            this.windDir1.Direction = 360D;
             resources.ApplyResources(this.windDir1, "windDir1");
             this.windDir1.Name = "windDir1";
             this.windDir1.Speed = 0D;
@@ -1058,6 +1059,7 @@ namespace MissionPlanner.GCSViews
             // tabQuick
             // 
             resources.ApplyResources(this.tabQuick, "tabQuick");
+            this.tabQuick.Controls.Add(this.button1);
             this.tabQuick.Controls.Add(this.groupBox1);
             this.tabQuick.Controls.Add(this.button10);
             this.tabQuick.Controls.Add(this.numericUpDown2);
@@ -3142,6 +3144,13 @@ namespace MissionPlanner.GCSViews
             // 
             this.bindingSourceStatusTab.DataSource = typeof(MissionPlanner.CurrentState);
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // FlightData
             // 
             this.Controls.Add(this.MainH);
@@ -3496,5 +3505,6 @@ namespace MissionPlanner.GCSViews
         private CheckBox cb_rc_loss;
         private CheckBox cb_crit_batt;
         private Button but_set_failsafe;
+        private Button button1;
     }
 }

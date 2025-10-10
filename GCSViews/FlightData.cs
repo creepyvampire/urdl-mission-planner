@@ -7107,7 +7107,7 @@ namespace MissionPlanner.GCSViews
                 {
                     if (inputBox.Text == "1234")
                     {
-                        MainV2.comPort.doCommand(MAVLink.MAV_CMD.PAYLOAD_PLACE, 0, 0, 0, 0, 0, 0, 0);
+                        MainV2.comPort.doCommand(MAVLink.MAV_CMD.PAYLOAD_PLACE, 0, 0, 0, 1, 0, 0, 0);
                         MessageBox.Show("Command sent.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

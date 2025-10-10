@@ -1777,10 +1777,12 @@ namespace MissionPlanner
             attitudeThread.Abort();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
-            isBiasSet = true;
+            if (isBiasSet) { return; }
+            if(!MainV2.comPort.BaseStream.IsOpen) { return; }
 
+            isBiasSet = true;
             string roll = textBox34.Text.Trim();
             string pitch = textBox35.Text.Trim();
             string yaw = textBox36.Text.Trim();
@@ -1788,7 +1790,20 @@ namespace MissionPlanner
             double.TryParse(pitch,NumberStyles.Float, CultureInfo.InvariantCulture,out biasPitch);
             double.TryParse(yaw, NumberStyles.Float, CultureInfo.InvariantCulture, out biasYaw);
 
-            MessageBox.Show($"Bias set to {roll} {pitch} {yaw}", "Bias Set",MessageBoxButtons.OK);
+            for (int i = 0; i < 5; i++)
+            {
+                try
+                {
+                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "phibias", biasRoll);
+                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "thebias", biasPitch);
+                    await MainV2.comPort.setParamAsync((byte)sysid, (byte)compid, "shibias", biasYaw);
+                    label14.Text = "Biases Set successfully";
+                    await Task.Delay(5000);
+                    label14.Text = "";
+                    return;
+                }
+                catch { continue; }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

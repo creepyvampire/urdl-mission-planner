@@ -97,7 +97,7 @@
       <P1>max descent</P1>
       <P2></P2>
       <P3></P3>
-      <P4></P4>
+      <P4>drop flag</P4>
       <X>Lat</X>
       <Y>Long</Y>
       <Z unitType="alt">Alt</Z>
@@ -559,7 +559,7 @@
       <P1>max descent</P1>
       <P2></P2>
       <P3></P3>
-      <P4></P4>
+      <P4>Drop Flag</P4>
       <X>Lat</X>
       <Y>Long</Y>
       <Z unitType="alt">Alt</Z>

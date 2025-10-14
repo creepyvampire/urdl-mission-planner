@@ -5,8 +5,8 @@
   <AC2>
     <WAYPOINT>
       <P1>Delay</P1>
-      <P2></P2>
-      <P3></P3>
+      <P2>Dive Angle</P2>
+      <P3>Speed</P3>
       <P4></P4>
       <X>Lat</X>
       <Y>Long</Y>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.Packaging;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -9,6 +10,7 @@ namespace MissionPlanner
         public Splash()
         {
             InitializeComponent();
+            label1.Text = $"BUILD: {ProductVersion}";
 
             
         }

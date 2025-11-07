@@ -2071,6 +2071,24 @@ namespace MissionPlanner
 
         }
 
+        private void but_json_param_update_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.PREFLIGHT_STORAGE, 4, 0, 0, 0, 0, 0, 0);
+        }
+
+        private void but_soft_reset_Click(object sender, EventArgs e)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                return;
+            }
+            MainV2.comPort.doCommand(MAVLink.MAV_CMD.PREFLIGHT_REBOOT_SHUTDOWN, 1, 0, 0, 0, 0, 0, 0);
+        }
+
         private async void btnUpdateAll_Click(object sender, EventArgs e)
         {
             if (!MainV2.comPort.BaseStream.IsOpen)

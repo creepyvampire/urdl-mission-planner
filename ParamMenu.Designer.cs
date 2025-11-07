@@ -129,6 +129,8 @@
             this.tb_vh_thmax = new System.Windows.Forms.TextBox();
             this.tb_vh_thhv = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.but_json_param_update = new System.Windows.Forms.Button();
+            this.but_soft_reset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1162,12 +1164,34 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.btnUpdateLimits_Click);
             // 
+            // but_json_param_update
+            // 
+            this.but_json_param_update.Location = new System.Drawing.Point(517, 485);
+            this.but_json_param_update.Name = "but_json_param_update";
+            this.but_json_param_update.Size = new System.Drawing.Size(142, 39);
+            this.but_json_param_update.TabIndex = 56;
+            this.but_json_param_update.Text = "JSON Parameters Update";
+            this.but_json_param_update.UseVisualStyleBackColor = true;
+            this.but_json_param_update.Click += new System.EventHandler(this.but_json_param_update_Click);
+            // 
+            // but_soft_reset
+            // 
+            this.but_soft_reset.Location = new System.Drawing.Point(671, 485);
+            this.but_soft_reset.Name = "but_soft_reset";
+            this.but_soft_reset.Size = new System.Drawing.Size(120, 39);
+            this.but_soft_reset.TabIndex = 57;
+            this.but_soft_reset.Text = "Soft Reboot";
+            this.but_soft_reset.UseVisualStyleBackColor = true;
+            this.but_soft_reset.Click += new System.EventHandler(this.but_soft_reset_Click);
+            // 
             // ParamMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(841, 536);
+            this.Controls.Add(this.but_soft_reset);
+            this.Controls.Add(this.but_json_param_update);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button4);
@@ -1296,5 +1320,7 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button but_json_param_update;
+        private System.Windows.Forms.Button but_soft_reset;
     }
 }

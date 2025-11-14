@@ -33,6 +33,7 @@ using LogAnalyzer = MissionPlanner.Utilities.LogAnalyzer;
 using TableLayoutPanelCellPosition = System.Windows.Forms.TableLayoutPanelCellPosition;
 using UnauthorizedAccessException = System.UnauthorizedAccessException;
 using System.Speech.Synthesis;
+using MissionPlanner.ArduPilot.Mavlink;
 
 // written by michael oborne
 
@@ -703,6 +704,8 @@ namespace MissionPlanner.GCSViews
             TabListDisplay.Add(tabQuick.Name, MainV2.DisplayConfiguration.displayQuickTab);
 
             TabListDisplay.Add(tabHUD.Name, MainV2.DisplayConfiguration.displayHUDTab);
+
+            TabListDisplay.Add(tabFirmware.Name, MainV2.DisplayConfiguration.displayFirmwareTab);
 
             TabListDisplay.Add(tabPagePreFlight.Name, MainV2.DisplayConfiguration.displayPreFlightTab);
 
@@ -7160,10 +7163,22 @@ namespace MissionPlanner.GCSViews
                 }
             }
         }
-
-        private void button11_Click_1(object sender, EventArgs e)
+        private void but_firmware_upload_Click(object sender, EventArgs e)
         {
-
+            /*
+            CancellationTokenSource cancel = new CancellationTokenSource();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = "c:\\";
+            ofd.Filter = "All Files (*.*)|*.*";
+            ofd.FilterIndex = 1;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string filepath = ofd.FileName;
+                Console.WriteLine(filepath);
+                MAVFtp ftp = new MAVFtp(MainV2.comPort, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+                ftp.UploadFile("/usr/hello.txt", filepath, cancel);
+            }
+            */
         }
 
 

@@ -114,6 +114,8 @@ namespace MissionPlanner.GCSViews
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.tabFirmware = new System.Windows.Forms.TabPage();
+            this.but_firmware_upload = new System.Windows.Forms.Button();
             this.tabActions = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BUT_SendMSG = new MissionPlanner.Controls.MyButton();
@@ -300,6 +302,7 @@ namespace MissionPlanner.GCSViews
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabHUD.SuspendLayout();
+            this.tabFirmware.SuspendLayout();
             this.tabActions.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPagemessages.SuspendLayout();
@@ -1038,6 +1041,7 @@ namespace MissionPlanner.GCSViews
             this.tabControlactions.ContextMenuStrip = this.contextMenuStripactionstab;
             this.tabControlactions.Controls.Add(this.tabQuick);
             this.tabControlactions.Controls.Add(this.tabHUD);
+            this.tabControlactions.Controls.Add(this.tabFirmware);
             this.tabControlactions.Controls.Add(this.tabActions);
             this.tabControlactions.Controls.Add(this.tabPagemessages);
             this.tabControlactions.Controls.Add(this.tabActionsSimple);
@@ -1316,6 +1320,20 @@ namespace MissionPlanner.GCSViews
             // 
             resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
+            // 
+            // tabFirmware
+            // 
+            this.tabFirmware.Controls.Add(this.but_firmware_upload);
+            resources.ApplyResources(this.tabFirmware, "tabFirmware");
+            this.tabFirmware.Name = "tabFirmware";
+            this.tabFirmware.UseVisualStyleBackColor = true;
+            // 
+            // but_firmware_upload
+            // 
+            resources.ApplyResources(this.but_firmware_upload, "but_firmware_upload");
+            this.but_firmware_upload.Name = "but_firmware_upload";
+            this.but_firmware_upload.UseVisualStyleBackColor = true;
+            this.but_firmware_upload.Click += new System.EventHandler(this.but_firmware_upload_Click);
             // 
             // tabActions
             // 
@@ -3200,6 +3218,7 @@ namespace MissionPlanner.GCSViews
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabHUD.ResumeLayout(false);
             this.tabHUD.PerformLayout();
+            this.tabFirmware.ResumeLayout(false);
             this.tabActions.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -3516,5 +3535,7 @@ namespace MissionPlanner.GCSViews
         private Button but_set_failsafe;
         private Button button1;
         private Button button5;
+        private TabPage tabFirmware;
+        private Button but_firmware_upload;
     }
 }

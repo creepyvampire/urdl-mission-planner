@@ -7163,9 +7163,8 @@ namespace MissionPlanner.GCSViews
                 }
             }
         }
-        private void but_firmware_upload_Click(object sender, EventArgs e)
+        private async void but_firmware_upload_Click(object sender, EventArgs e)
         {
-            /*
             CancellationTokenSource cancel = new CancellationTokenSource();
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.InitialDirectory = "c:\\";
@@ -7174,11 +7173,30 @@ namespace MissionPlanner.GCSViews
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string filepath = ofd.FileName;
-                Console.WriteLine(filepath);
-                MAVFtp ftp = new MAVFtp(MainV2.comPort, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
-                ftp.UploadFile("/usr/hello.txt", filepath, cancel);
+                string destFileName = Path.GetFileName(filepath);
+                string remotePath = "/root/" + destFileName;
+                but_firmware_upload.Enabled = false;
+                try
+                {
+                    await Task.Run(() =>
+                    {
+                        if (!MainV2.comPort.BaseStream.IsOpen)
+                        {
+                            throw new Exception("Port is closed");
+                        }
+                        MAVFtp ftp = new MAVFtp(MainV2.comPort, MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid);
+                        ftp.UploadFile(remotePath, filepath, cancel);
+                        MessageBox.Show("Upload Complete", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    });
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Upload Failed: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    but_firmware_upload.Enabled = true;
+                }
             }
-            */
         }
 
 
